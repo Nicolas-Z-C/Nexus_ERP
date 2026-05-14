@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+
+  sqlserver:
+    # En dev exponemos el puerto para conectarnos con SSMS o Rider
+    ports:
+      - "1313:1313"
+    environment:
+      SA_PASSWORD: ${DB_PASSWORD}
+      ACCEPT_EULA: "Y"
