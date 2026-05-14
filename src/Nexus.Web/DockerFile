@@ -1,0 +1,23 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+
+COPY ["src/Nexus.Domain/Nexus.Domain.csproj", "src/Nexus.Domain/"]
+COPY ["src/Nexus.Application/Nexus.Application.csproj", "src/Nexus.Application/"]
+COPY ["src/Nexus.Infrastructure/Nexus.Infrastructure.csproj", "src/Nexus.Infrastructure/"]
+COPY ["src/Nexus.Web/Nexus.Web.csproj", "src/Nexus.Web/"]
+COPY ["src/Nexus.Web.Client/Nexus.Web.Client.csproj", "src/Nexus.Web.Client/"]
+
+RUN dotnet restore "src/Nexus.Web/Nexus.Web.csproj"
+
+COPY . .
+WORKDIR "/src/Nexus.Web"
+RUN dotnet build -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish -c Release -o /app/publish --no-restore
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+WORKDIR /app
+EXPOSE 8080
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Nexus.Web.dll"]
