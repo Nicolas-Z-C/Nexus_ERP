@@ -47,6 +47,7 @@ git checkout develop
 
 ## 🏛️ Estructura del proyecto (Clean Architecture)
 
+```
 Nexus/
 ├── src/
 │   ├── Nexus.Domain/          # Entidades, Value Objects, interfaces del dominio
@@ -58,6 +59,7 @@ Nexus/
 │   └── Nexus.Application.Tests/
 ├── docker-compose.yml
 └── README.md
+```
 
 ## 📌 Roadmap
 
