@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nexus.Application\Nexus.Application.csproj" />
+    <ProjectReference Include="..\..\Nexus.Infrastructure\Nexus.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

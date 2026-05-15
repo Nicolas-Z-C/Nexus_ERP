@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jQzXZyDKyP8=",
+  "dgSpecHash": "dc7xHvwUbeQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\Nexus.Infraestructure\\Nexus.Infraestructure.csproj",
+  "projectFilePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Infrastructure\\Nexus.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

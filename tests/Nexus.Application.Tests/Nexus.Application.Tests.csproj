@@ -18,4 +18,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Nexus.Application\Nexus.Application.csproj" />
+  </ItemGroup>
+
 </Project>

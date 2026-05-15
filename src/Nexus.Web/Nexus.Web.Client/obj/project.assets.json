@@ -535,6 +535,29 @@
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
         }
+      },
+      "Nexus.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Nexus.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nexus.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nexus.Application.dll": {}
+        }
+      },
+      "Nexus.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Nexus.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nexus.Domain.dll": {}
+        }
       }
     },
     "net10.0/browser-wasm": {
@@ -1070,6 +1093,29 @@
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
+        }
+      },
+      "Nexus.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Nexus.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nexus.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nexus.Application.dll": {}
+        }
+      },
+      "Nexus.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Nexus.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nexus.Domain.dll": {}
         }
       }
     }
@@ -1940,6 +1986,16 @@
         "tools/net472/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
         "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll"
       ]
+    },
+    "Nexus.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Nexus.Application/Nexus.Application.csproj",
+      "msbuildProject": "../../Nexus.Application/Nexus.Application.csproj"
+    },
+    "Nexus.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Nexus.Domain/Nexus.Domain.csproj",
+      "msbuildProject": "../../Nexus.Domain/Nexus.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1948,7 +2004,8 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 10.0.2",
       "Microsoft.DotNet.HotReload.WebAssembly.Browser >= 10.0.102",
       "Microsoft.NET.ILLink.Tasks >= 10.0.2",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 10.0.2"
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 10.0.2",
+      "Nexus.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1983,7 +2040,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj": {
+              "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

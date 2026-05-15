@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "Nexus.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Nexus.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nexus.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nexus.Application.dll": {}
+        }
+      },
+      "Nexus.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Nexus.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nexus.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Nexus.Application/1.0.0": {
+      "type": "project",
+      "path": "../Nexus.Application/Nexus.Application.csproj",
+      "msbuildProject": "../Nexus.Application/Nexus.Application.csproj"
+    },
+    "Nexus.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Nexus.Domain/Nexus.Domain.csproj",
+      "msbuildProject": "../Nexus.Domain/Nexus.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "Nexus.Application >= 1.0.0",
+      "Nexus.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ytraz\\.nuget\\packages\\": {},
@@ -14,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\Nexus.Infraestructure\\Nexus.Infraestructure.csproj",
-      "projectName": "Nexus.Infraestructure",
-      "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\Nexus.Infraestructure\\Nexus.Infraestructure.csproj",
+      "projectUniqueName": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Infrastructure\\Nexus.Infrastructure.csproj",
+      "projectName": "Nexus.Infrastructure",
+      "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Infrastructure\\Nexus.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\Nexus.Infraestructure\\obj\\",
+      "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,7 +77,14 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj": {
+              "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj"
+            },
+            "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\Nexus.Domain.csproj": {
+              "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\Nexus.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
