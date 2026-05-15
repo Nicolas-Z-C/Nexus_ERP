@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -54,6 +55,41 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.4.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[14.1.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "AutoMapper": "16.0.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
+          },
           "imports": [
             "net461",
             "net462",
@@ -357,6 +393,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -394,6 +431,24 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "centralPackageVersions": {
+            "AutoMapper": "16.0.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
+          },
           "imports": [
             "net461",
             "net462",
@@ -697,6 +752,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -741,6 +797,43 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.8, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.8, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "AutoMapper": "16.0.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
+          },
           "imports": [
             "net461",
             "net462",
@@ -1044,6 +1137,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Web\\Nexus.Web.Client\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -1094,7 +1188,8 @@
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
-              "version": "[10.0.2, )"
+              "version": "[10.0.8, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.DotNet.HotReload.WebAssembly.Browser": {
               "target": "Package",
@@ -1113,6 +1208,24 @@
               "version": "[10.0.2, )",
               "autoReferenced": true
             }
+          },
+          "centralPackageVersions": {
+            "AutoMapper": "16.0.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
           },
           "imports": [
             "net461",
@@ -1428,6 +1541,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Web\\Nexus.Web\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -1482,10 +1596,41 @@
               "version": "[10.0.2, )",
               "autoReferenced": true
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[10.0.0, )",
+              "versionCentrallyManaged": true
+            },
             "Microsoft.AspNetCore.Components.WebAssembly.Server": {
               "target": "Package",
-              "version": "[10.0.2, )"
+              "version": "[10.0.8, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.8, )",
+              "versionCentrallyManaged": true
             }
+          },
+          "centralPackageVersions": {
+            "AutoMapper": "16.0.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
           },
           "imports": [
             "net461",
