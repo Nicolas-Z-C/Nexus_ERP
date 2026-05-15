@@ -63,8 +63,8 @@ Nexus/
 
 ## 📌 Roadmap
 
-- [ ] Planificación y normalización de base de datos
-- [ ] Estructura base del proyecto (Clean Architecture)
+- [ x ] Planificación y normalización de base de datos
+- [ x ] Estructura base del proyecto (Clean Architecture)
 - [ ] Definición del dominio inicial
 - [ ] Creación de las entidades **Tenant** y **Usuario**
 - [ ] Creación de las entidades de catálogo (Países, Regiones, Ciudades)
