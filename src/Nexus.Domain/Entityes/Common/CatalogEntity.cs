@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Nexus.Domain.Common.Result;
+using Nexus.Domain.ValueObjects.Common;
+using Nexus.Domain.ValueObjects.Names;
+
+namespace Nexus.Domain.Entityes.Common
+{
+    public abstract class CatalogEntity 
+    {
+
+        public int ID {get; init;}
+        public Name Name {get; private set;}
+
+        protected CatalogEntity(Name name)
+        {
+            Name = name;
+        }
+
+        public void ChangeName (Name name) => Name = name;
+    }
+}
