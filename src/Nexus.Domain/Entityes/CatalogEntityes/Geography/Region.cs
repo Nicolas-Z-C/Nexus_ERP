@@ -8,24 +8,24 @@ using Nexus.Domain.ValueObjects.Names;
 
 namespace Nexus.Domain.Entityes.CatalogEntityes.Geography
 {
-    public class Country : CatalogEntity
+    public class Region : CatalogEntity
     {
-
-        public int ContinetID {get; private set;}
-        private Country(Name name, int continentID) : base(name)
+        public int CountryID {get; private set;}
+        private Region(Name name, int countryID) : base(name)
         {
-            ContinetID = continentID;
+            CountryID = countryID;
         }
 
-        internal Country() {}
-        public static Result<Country> Create(string name, int continentID)
+        internal Region() {}
+
+        public static Result<Region> Create(string name, int countryID)
         {
             var result = Name.Create(name);
 
             if(result.IsFailure)
                 return result.Error;
             
-            return new Country(result.Value, continentID);
+            return new Region(result.Value, countryID);
         }
     }
 }

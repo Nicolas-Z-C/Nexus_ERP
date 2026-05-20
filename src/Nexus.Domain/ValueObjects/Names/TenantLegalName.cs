@@ -8,21 +8,20 @@ using Nexus.Domain.ValueObjects.Common;
 
 namespace Nexus.Domain.ValueObjects.Names
 {
-    public class Name : Base
+    public class TenantLegalName : Base
     {
-
         private const int maxLenght = 100;
 
-        private Name(string value) : base(value) {}
+        private TenantLegalName(string value) : base(value) {}
 
-        public static Result<Name> Create(string value)
+        public static Result<TenantLegalName> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.Upercase());
+            var resultado = Validate(value,maxLenght,DomainValidators.AlphaNumericWhitSpaces());
 
             if(resultado.IsFailure)
                 return resultado.Error;
             
-            return new Name(resultado.Value);
+            return new TenantLegalName(resultado.Value);
         }
     }
 }

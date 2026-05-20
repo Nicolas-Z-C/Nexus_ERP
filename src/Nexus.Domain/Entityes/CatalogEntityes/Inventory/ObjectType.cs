@@ -7,7 +7,10 @@ namespace Nexus.Domain.Entityes.CatalogEntityes.Inventory
 {
     public class ObjectType : CatalogEntity
     {
+
         private ObjectType(Name name) : base(name) {}
+
+        internal ObjectType() {}
 
         public static Result<ObjectType> Create(string name)
         {

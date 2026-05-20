@@ -21,18 +21,25 @@ namespace Nexus.Domain.Validators
     [GeneratedRegex(@"^[A-Z]$")]
     public static partial Regex Upercase();
 
-    [GeneratedRegex(@"^[a-zA-Z0]+$")]
+    [GeneratedRegex(@"^[a-zA-Z0-ZáéíóúÁÉÍÓÚñÑ]+$")]
     public static partial Regex AlphaNumeric();
+
+    [GeneratedRegex(@"^[a-zA-Z0-ZáéíóúÁÉÍÓÚñÑ ]+$")]
+    public static partial Regex AlphaNumericWhitSpaces();
 
     [GeneratedRegex(@"^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$")]
     public static partial Regex PostalCode();
     // --- Patrones de Contacto ---
-    [GeneratedRegex(@"^\+\d$")]
-    public static partial Regex PhonePrefix();
+    [GeneratedRegex(@"^\+?\d{1,15}")]
+    public static partial Regex PhoneNumber();
+
+    [GeneratedRegex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+")]
+    public static partial Regex Email();
 
     // --- Patrones de Texto ---
     [GeneratedRegex(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$")]
     public static partial Regex TextWithSpaces();
-    }
+
+
     }
 }

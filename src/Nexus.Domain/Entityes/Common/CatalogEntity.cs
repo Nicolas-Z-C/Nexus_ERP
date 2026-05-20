@@ -11,7 +11,7 @@ namespace Nexus.Domain.Entityes.Common
     public abstract class CatalogEntity 
     {
 
-        public int ID {get; init;}
+        public int ID {get; private set;}
         public Name Name {get; private set;}
 
         protected CatalogEntity(Name name)
@@ -19,6 +19,19 @@ namespace Nexus.Domain.Entityes.Common
             Name = name;
         }
 
-        public void ChangeName (Name name) => Name = name;
+        protected CatalogEntity() {}
+
+        public Result ChangeName(string name)
+        {
+            
+            var result = Name.Create(name);
+
+            if(result.IsFailure)
+                return result.Error;
+            
+            Name = result.Value;
+            return Result.Success();
+
+        }
     }
 }

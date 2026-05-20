@@ -13,5 +13,6 @@ namespace Nexus.Domain.Entityes.Common
         {
             Id = Guid.NewGuid();
         }
+
     }
 }

@@ -6,22 +6,20 @@ using Nexus.Domain.Common.Result;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.ValueObjects.Names;
 
-namespace Nexus.Domain.Entityes.CatalogEntityes.Geography
+namespace Nexus.Domain.Entityes.CatalogEntityes.ID
 {
-    public class Continent : CatalogEntity
+    public class IDType : CatalogEntity
     {
-        private Continent(Name name) : base(name) {}
+        private IDType(Name name) : base(name) {}
 
-        internal Continent() {}
-
-        public static Result<Continent> Create(string name)
+        public Result<IDType> Crear(string name)
         {
             var result = Name.Create(name);
-
+            
             if(result.IsFailure)
                 return result.Error;
             
-            return new Continent(result.Value);
+            return new IDType(result.Value);
         }
     }
 }

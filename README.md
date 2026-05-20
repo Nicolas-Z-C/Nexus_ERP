@@ -65,9 +65,9 @@ Nexus/
 
 - [ x ] Planificación y normalización de base de datos
 - [ x ] Estructura base del proyecto (Clean Architecture)
-- [ ] Definición del dominio inicial
-- [ ] Creación de las entidades **Tenant** y **Usuario**
-- [ ] Creación de las entidades de catálogo (Países, Regiones, Ciudades)
+- [ x ] Creación de las entidades de catálogo iniciales (Países, Regiones, Ciudades)
+- [ x ] Creación de las entidades **Tenant** y **Usuario**
+- [ ] Creación de las entidades **Proyecto** y **Personal**
 - [ ] Módulo de Personal (CRUD de empleados)
 - [ ] Módulo de Inventario (CRUD de productos y stock)
 

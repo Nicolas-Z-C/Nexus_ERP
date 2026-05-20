@@ -6,23 +6,22 @@ using Nexus.Domain.Common.Result;
 using Nexus.Domain.Validators;
 using Nexus.Domain.ValueObjects.Common;
 
-namespace Nexus.Domain.ValueObjects.Names
+namespace Nexus.Domain.ValueObjects.IDs
 {
-    public class Name : Base
+    public class TIN : Base
     {
-
         private const int maxLenght = 100;
 
-        private Name(string value) : base(value) {}
+        private TIN(string value) : base(value) {}
 
-        public static Result<Name> Create(string value)
+        public static Result<TIN> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.Upercase());
+            var resultado = Validate(value,maxLenght,DomainValidators.AlphaNumericWhitSpaces());
 
             if(resultado.IsFailure)
                 return resultado.Error;
             
-            return new Name(resultado.Value);
+            return new TIN(resultado.Value);
         }
     }
 }
