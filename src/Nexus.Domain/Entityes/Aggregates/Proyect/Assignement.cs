@@ -45,7 +45,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
 
         //Own Methods
 
-        public static Result<Assignement> Create(
+        internal static Result<Assignement> Create(
             string taskName,
             DateOnly deadLine,
             Guid tenant,
@@ -76,8 +76,10 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             ReprogrammedFlag = true;
 
             if(TaskStatus == Task_status.Overdue)
+            {
                 TaskStatus = Task_status.OnGoing;
                 OverdueFlag = false; 
+            }
             
             Update();
             return Result<Assignement>.Success(this);
@@ -100,12 +102,12 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public Assignement IsOverdue()
         {
             if(DateOnly.FromDateTime(DateTime.Now) > DeadLine)
-                {
+            {
                 TaskStatus = Task_status.Overdue;
                 OverdueFlag = true;
                 Update();
                 return this;
-                }
+            }
             
             return this;
         }
