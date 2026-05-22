@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Nexus.Domain.Enums
 {
-    public enum Priorities
+    public enum Priority
     {
         High = 1,
         Medium = 2,

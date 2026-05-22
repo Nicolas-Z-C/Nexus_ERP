@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace Nexus.Domain.Enums
 {
-    public enum TaskStatus
+    public enum Task_status
     {
         OnGoing = 1,
         Overdue = 2,
         Cancelled = 3,
         Reprogramed = 4,
+        Finished = 5,
     }
 }

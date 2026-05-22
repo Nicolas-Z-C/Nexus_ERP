@@ -16,7 +16,7 @@ namespace Nexus.Domain.ValueObjects.IDs
 
         public static Result<TIN> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.AlphaNumericWhitSpaces());
+            var resultado = Validate(value,DomainValidators.AlphaNumericWhitSpaces(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;
