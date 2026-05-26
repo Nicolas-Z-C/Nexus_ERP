@@ -1,4 +1,5 @@
 using Nexus.Domain.Common.Result;
+using Nexus.Domain.Entityes.CatalogEntityes.Geography;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Enums;
 using Nexus.Domain.Errors;
@@ -25,6 +26,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
 
         public EconomicSector EconomicSector {get; private set;}
         public int IDType {get; private set;}
+        public int City {get; private set;}
+        public int Country {get; private set;}
+        public int RegionId {get; private set;}
 
         
         //Child Entities - User
@@ -43,7 +47,10 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             Email tenantEmail,
             TelephoneNumber telephoneNumber,
             EconomicSector economicSector,
-            int idType)
+            int idType,
+            int city,
+            int country,
+            int region)
         {
             LegalName = tenantLegalName;
             TaxID = taxID;
@@ -55,7 +62,11 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             TelephoneNumber = telephoneNumber;
             EconomicSector = economicSector;
             IDType = idType;
+            City = city;
+            Country = country;
+            RegionId = region;
         }
+
         internal Tenant() {}
 
         //Tenant Own methods
@@ -70,7 +81,11 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             string tenantEmail,
             string telephoneNumber,
             EconomicSector economicSector,
-            int idType)
+            int idType,
+            int city,
+            int country,
+            int region
+            )
         {
             var legalName = TenantLegalName.Create(tenantLegalName);
             var taxid = TIN.Create(taxID);
@@ -85,8 +100,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
 
             if(results.Any(r => r.IsFailure))
             {
-                var fallidos = results.Where(r => r.IsFailure).Select(r => r.Error);
-                return Result<Tenant>.Failure(fallidos);
+                var falided = results.Where(r => r.IsFailure).Select(r => r.Error);
+                return Result<Tenant>.Failure(falided);
             }
             Tenant tenant = new Tenant
                             (
@@ -99,7 +114,10 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
                              tenantemail.Value,
                              telephonenumber.Value,
                              economicSector,
-                             idType
+                             idType,
+                             city,
+                             country,
+                             region
                             );
             return Result<Tenant>.Success(tenant);
         }  
@@ -113,7 +131,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             string complement,
             string tenantEmail,
             string telephoneNumber,
-            EconomicSector economicSector
+            EconomicSector economicSector,
+            int city,
+            int region
             )
         {
             var legalName = TenantLegalName.Create(tenantLegalName);
@@ -140,7 +160,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
                 complemen.Value       != Complement            ||
                 tenantemail.Value     != TenantEmail           ||
                 telephonenumber.Value != TelephoneNumber       ||
-                economicSector        != EconomicSector;
+                economicSector        != EconomicSector        ||
+                city                  != City                  ||
+                region                != RegionId;
 
             if (!hasChanges)
                 return Result<Tenant>.NoChanges(this);          
@@ -153,6 +175,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             TenantEmail = tenantemail.Value;
             TelephoneNumber = telephonenumber.Value;
             EconomicSector = economicSector;
+            City = city;
 
             Update();
             return Result<Tenant>.Success(this);

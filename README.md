@@ -1,4 +1,4 @@
-# Nexus ERP
+﻿# Nexus ERP
 
 Sistema de Gestión Empresarial (ERP) Multi-Tenant diseñado bajo principios de
 Arquitectura Limpia (Clean Architecture) y Desarrollo Orientado al Dominio (DDD).
@@ -68,6 +68,7 @@ Nexus/
 - [ x ] Creación de las entidades de catálogo iniciales (Países, Regiones, Ciudades)
 - [ x ] Creación de las entidades **Tenant** y **Usuario**
 - [ ] Creación de las entidades **Proyecto** y **Personal**
+- [ ] Testing unitario de las 3 entidades principales y el comportamiento con sus entidades hijas
 - [ ] Módulo de Personal (CRUD de empleados)
 - [ ] Módulo de Inventario (CRUD de productos y stock)
 

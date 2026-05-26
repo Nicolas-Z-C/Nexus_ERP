@@ -14,8 +14,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
 
         //Flags 
 
-        public bool ReprogrammedFlag {get; private set;} = false;
-        public bool OverdueFlag {get; private set;} = false;
+        public bool? ReprogrammedFlag {get; private set;} = false;
+        public bool? OverdueFlag {get; private set;} = false;
 
         //FK - enums
 
@@ -23,6 +23,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public Task_status TaskStatus {get; private set;} = Task_status.OnGoing;
         public Guid ProyectID {get; private set;}
         public Priority Priority {get; private set;}
+        public Guid StaffAssigned {get; private set;}
 
         //Ef and private constructor
 
@@ -33,6 +34,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             DateOnly deadLine,
             Guid tenant,
             Guid proyect,
+            Guid staff,
             Priority priority
         )
         {
@@ -41,6 +43,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             TenantId = tenant;
             ProyectID = proyect;
             Priority = priority;
+            StaffAssigned = staff;
         }
 
         //Own Methods
@@ -50,6 +53,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             DateOnly deadLine,
             Guid tenant,
             Guid proyect,
+            Guid staff,
             Priority priority
         )
         {
@@ -60,7 +64,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(deadLine <= DateOnly.FromDateTime(DateTime.Now))
                 return Result<Assignement>.Failure(new Error("Tarea.Deadline","La fecha limite no puede ser igual o menor a la actual"));
             
-            Assignement assignement = new (name.Value,deadLine,tenant,proyect,priority);
+            Assignement assignement = new (name.Value,deadLine,tenant,proyect,staff,priority);
             return Result<Assignement>.Success(assignement);
         }
 
@@ -85,6 +89,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             return Result<Assignement>.Success(this);
         }
 
+        /*
+        I need to add a way to call the staff if any of the below are called
+        */
         public Result<Assignement> Cancel()
         {
             TaskStatus = Task_status.Cancelled;
