@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nexus.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d0f2d9c62d960bb96f9e15f2643afbdf68ebc98")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+157cdd780155f434cd91dde10b691198fb677b8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nexus.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nexus.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
