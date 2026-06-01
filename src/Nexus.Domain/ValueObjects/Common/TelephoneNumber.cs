@@ -15,7 +15,7 @@ namespace Nexus.Domain.ValueObjects.Common
 
         public static Result<TelephoneNumber> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.PhoneNumber());
+            var resultado = Validate(value,DomainValidators.PhoneNumber(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;

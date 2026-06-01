@@ -10,14 +10,13 @@ namespace Nexus.Domain.ValueObjects.Names
 {
     public class Name : Base
     {
-
         private const int maxLenght = 100;
 
         private Name(string value) : base(value) {}
 
         public static Result<Name> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.Upercase());
+            var resultado = Validate(value,DomainValidators.Upercase(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;

@@ -1,4 +1,5 @@
 using Nexus.Domain.Common.Result;
+using Nexus.Domain.Entityes.CatalogEntityes.Geography;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Enums;
 using Nexus.Domain.Errors;
@@ -11,119 +12,25 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
 {
     public class Tenant : AuditableEntity
     {
-        private TenantLegalName _legalName;
-        private TIN _taxID;
-        private Name _tenantComercialName;
-        private Street _streetName;
-        private AdressNumber _adressNumber;
-        private Name _complement;
-        private Email _tenantEmail;
-        private TelephoneNumber _telephoneNumber;
+        public TenantLegalName LegalName {get; private set;}
+        public TIN TaxID {get; private set;}
+        public Name TenantComercialName {get; private set;}
+        public Street StreetName {get; private set;}
+        public AdressNumber AdressNumber {get; private set;}
+        public Name Complement {get; private set;}
+        public Email TenantEmail {get; private set;}
+        public TelephoneNumber TelephoneNumber {get; private set;}
         public bool IsActive {get; private set;} = true;
 
         //Foreing Keys - Enum Properties
 
         public EconomicSector EconomicSector {get; private set;}
         public int IDType {get; private set;}
+        public int City {get; private set;}
+        public int Country {get; private set;}
+        public int RegionId {get; private set;}
 
-        //Sets
-
-        public TenantLegalName LegalName
-        {
-            get => _legalName;
-
-            private set
-            {
-                if(_legalName != value)
-                {
-                    _legalName = value;
-                }
-            }
-        }
-        public TIN TaxID
-        {
-            get => _taxID;
-
-            private set
-            {
-                if(_taxID != value)
-                {
-                    _taxID = value;
-                }
-            }
-        }
-        public Name TenantComercialName
-        {
-            get => _tenantComercialName;
-
-            private set
-            {
-                if(_tenantComercialName != value)
-                {
-                    _tenantComercialName = value;
-                }
-            }
-        }
-        public Street StreetName
-        {
-            get => _streetName;
-
-            private set
-            {
-                if(_streetName != value)
-                {
-                    _streetName = value;
-                }
-            }
-        }
-        public AdressNumber AdressNumber
-        {
-            get => _adressNumber;
-
-            private set
-            {
-                if(_adressNumber != value)
-                {
-                    _adressNumber = value;
-                }
-            }
-        }
-        public Name Complement
-        {
-            get => _complement;
-
-            private set
-            {
-                if(_complement != value)
-                {
-                    _complement = value;
-                }
-            }
-        }
-        public Email TenantEmail
-        {
-            get => _tenantEmail;
-
-            private set
-            {
-                if(_tenantEmail != value)
-                {
-                    _tenantEmail = value;
-                }
-            }
-        }
-        public TelephoneNumber TelephoneNumber
-        {
-            get => _telephoneNumber;
-
-            private set
-            {
-                if(_telephoneNumber != value)
-                {
-                    _telephoneNumber = value;
-                }
-            }
-        }
+        
         //Child Entities - User
 
         private readonly List<User> _users = new List<User>();
@@ -138,7 +45,12 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             AdressNumber adressNumber,
             Name complement,
             Email tenantEmail,
-            TelephoneNumber telephoneNumber)
+            TelephoneNumber telephoneNumber,
+            EconomicSector economicSector,
+            int idType,
+            int city,
+            int country,
+            int region)
         {
             LegalName = tenantLegalName;
             TaxID = taxID;
@@ -148,7 +60,13 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             Complement = complement;
             TenantEmail = tenantEmail;
             TelephoneNumber = telephoneNumber;
+            EconomicSector = economicSector;
+            IDType = idType;
+            City = city;
+            Country = country;
+            RegionId = region;
         }
+
         internal Tenant() {}
 
         //Tenant Own methods
@@ -163,7 +81,11 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             string tenantEmail,
             string telephoneNumber,
             EconomicSector economicSector,
-            int idType)
+            int idType,
+            int city,
+            int country,
+            int region
+            )
         {
             var legalName = TenantLegalName.Create(tenantLegalName);
             var taxid = TIN.Create(taxID);
@@ -178,22 +100,25 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
 
             if(results.Any(r => r.IsFailure))
             {
-                var fallidos = results.Where(r => r.IsFailure).Select(r => r.Error);
-                return Result<Tenant>.Failure(fallidos);
+                var falided = results.Where(r => r.IsFailure).Select(r => r.Error);
+                return Result<Tenant>.Failure(falided);
             }
             Tenant tenant = new Tenant
-                            {
-                             LegalName = legalName.Value,
-                             TaxID = taxid.Value,
-                             TenantComercialName = comercialName.Value,
-                             StreetName = streetname.Value,
-                             AdressNumber = adressnumber.Value,
-                             Complement = complemen.Value,
-                             TenantEmail = tenantemail.Value,
-                             TelephoneNumber = telephonenumber.Value,
-                             EconomicSector = economicSector,
-                             IDType = idType
-                            };
+                            (
+                             legalName.Value,
+                             taxid.Value,
+                             comercialName.Value,
+                             streetname.Value,
+                             adressnumber.Value,
+                             complemen.Value,
+                             tenantemail.Value,
+                             telephonenumber.Value,
+                             economicSector,
+                             idType,
+                             city,
+                             country,
+                             region
+                            );
             return Result<Tenant>.Success(tenant);
         }  
 
@@ -206,7 +131,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             string complement,
             string tenantEmail,
             string telephoneNumber,
-            EconomicSector economicSector
+            EconomicSector economicSector,
+            int city,
+            int region
             )
         {
             var legalName = TenantLegalName.Create(tenantLegalName);
@@ -223,7 +150,22 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             {
                 var fallidos = results.Where(r => r.IsFailure).Select(r => r.Error);
                 return Result<Tenant>.Failure(fallidos);
-            }            
+            }  
+
+            bool hasChanges =
+                legalName.Value       != LegalName             ||
+                comercialName.Value   != TenantComercialName   ||
+                streetname.Value      != StreetName            ||
+                adressnumber.Value    != AdressNumber          ||
+                complemen.Value       != Complement            ||
+                tenantemail.Value     != TenantEmail           ||
+                telephonenumber.Value != TelephoneNumber       ||
+                economicSector        != EconomicSector        ||
+                city                  != City                  ||
+                region                != RegionId;
+
+            if (!hasChanges)
+                return Result<Tenant>.NoChanges(this);          
             
             LegalName = legalName.Value;
             TenantComercialName = comercialName.Value;
@@ -233,6 +175,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             TenantEmail = tenantemail.Value;
             TelephoneNumber = telephonenumber.Value;
             EconomicSector = economicSector;
+            City = city;
 
             Update();
             return Result<Tenant>.Success(this);

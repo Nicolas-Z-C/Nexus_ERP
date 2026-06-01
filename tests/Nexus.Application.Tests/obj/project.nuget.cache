@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pZecukvLmFA=",
+  "dgSpecHash": "sga+MDpS3cs=",
   "success": true,
   "projectFilePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\tests\\Nexus.Application.Tests\\Nexus.Application.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ytraz\\.nuget\\packages\\ardalis.smartenum\\8.2.0\\ardalis.smartenum.8.2.0.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\automapper\\16.0.0\\automapper.16.0.0.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",

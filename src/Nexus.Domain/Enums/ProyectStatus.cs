@@ -12,7 +12,7 @@ namespace Nexus.Domain.Enums
         Developing = 2,
         StandBy = 3,
         Cancelled = 4,
-        Finished = 5
-    
+        Finished = 5,
+
     }
 }

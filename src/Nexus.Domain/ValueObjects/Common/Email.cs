@@ -15,7 +15,7 @@ namespace Nexus.Domain.ValueObjects.Common
 
         public static Result<Email> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.Email());
+            var resultado = Validate(value,DomainValidators.Email(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;

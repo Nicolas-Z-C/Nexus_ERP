@@ -8,20 +8,21 @@ using Nexus.Domain.ValueObjects.Common;
 
 namespace Nexus.Domain.ValueObjects.IDs
 {
-    public class TIN : Base
+    public class PersonelID : Base
     {
-        private const int maxLenght = 100;
+        private const int maxLenght = 20;
 
-        private TIN(string value) : base(value) {}
+        private PersonelID(string value) : base(value) {}
 
-        public static Result<TIN> Create(string value)
+        public static Result<PersonelID> Create(string value)
         {
-            var resultado = Validate(value,DomainValidators.AlphaNumericWhitSpaces(),maxLenght);
+            var resultado = Validate(value,DomainValidators.Upercase(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;
             
-            return new TIN(resultado.Value);
+            return new PersonelID(resultado.Value);
         }
+    }
     }
 }
