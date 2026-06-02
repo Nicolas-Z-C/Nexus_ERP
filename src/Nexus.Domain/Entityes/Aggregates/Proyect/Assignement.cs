@@ -118,9 +118,17 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             
             return this;
         }
-        //Hacer los metodos que faltan para assignements y proyects 
-        /*
-        agregar desde proyecto, eliminar desde aca, re-programar y la flag de reprogramacion
-        */
+        
+        //To string
+
+        public override string ToString()
+        {
+            string result = @$"Nombre de la tarea = {TaskName}
+                               Fecha limite = {DeadLine}
+                               Estado de la tarea = {TaskStatus}
+                               Prioridad = {Priority}
+                               ";
+            return result;
+        }
     }
 }

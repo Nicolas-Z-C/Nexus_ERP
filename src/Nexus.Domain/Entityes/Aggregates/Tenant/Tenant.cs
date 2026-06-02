@@ -1,5 +1,4 @@
 using Nexus.Domain.Common.Result;
-using Nexus.Domain.Entityes.CatalogEntityes.Geography;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Enums;
 using Nexus.Domain.Errors;
