@@ -106,5 +106,32 @@ namespace Nexus.Domain.Tests.Entities.PersonelTests
             : "");
             _output.WriteLine(result.Value.ToString());
         }
+
+        [Fact] 
+        public void ReemployStaffShouldWork()
+        {
+            var staff = Staff.Create(
+                "NombrePersonal",
+                "ABCD123",
+                "Calle 1",
+                "35R",
+                "Complemento",
+                "SuperE@email.com",
+                "1234567890",
+                Guid.NewGuid(),
+                1,2,3,4,5
+            );
+
+            staff.Value.ChangeStatus(Enums.PersonalStatus.Fired);
+
+            _output.WriteLine(staff.Value.ToString());
+
+            var result = staff.Value.ReEmploy();
+
+            Assert.True(result.IsSuccess, result.IsFailure 
+            ? string.Join(" ", result.Errors)
+            : "");
+            _output.WriteLine(result.Value.ToString());
+        }
     }
 }

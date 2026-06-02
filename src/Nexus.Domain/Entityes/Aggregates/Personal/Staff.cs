@@ -249,6 +249,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
                                Email: {Email.ToString()}
                                Numero Telefonico: {TelephoneNumber.ToString()}
                                Puesto: {PositionID}
+                               Ha sido recontratado: {IsReEmployed}
                                Contrato: {ContractID}
                                Ciudad: {CityID}
                                Pais: {CountryID}
