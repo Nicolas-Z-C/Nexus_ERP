@@ -25,6 +25,7 @@ namespace Nexus.Domain.Common.Result
         }
 
         public static Result Success() => new(true, Error.None);
+        public static Result Warning(Error error) => new(true, error);
         public static Result Failure(Error error) => new(false, error);
         public static Result Failure(IEnumerable<Error> errors) => new(false, errors);
         public static implicit operator Result(Error error) => Failure(error);

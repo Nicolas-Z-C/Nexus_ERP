@@ -1,5 +1,4 @@
 using Nexus.Domain.Common.Result;
-using Nexus.Domain.Entityes.CatalogEntityes.Geography;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Enums;
 using Nexus.Domain.Errors;
@@ -70,8 +69,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
         internal Tenant() {}
 
         //Tenant Own methods
-
-        public Result<Tenant> Create(
+        public static Result<Tenant> Create(
             string tenantLegalName,
             string taxID,
             string tenantComercialName,
@@ -103,7 +101,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
                 var falided = results.Where(r => r.IsFailure).Select(r => r.Error);
                 return Result<Tenant>.Failure(falided);
             }
-            Tenant tenant = new Tenant
+            var tenant = new Tenant
                             (
                              legalName.Value,
                              taxid.Value,
@@ -200,7 +198,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             var user = User.Create(username, password, Id, email);
             
             if(user.IsFailure)
-                return user.Error;
+                return Result.Failure(user.Error);
+            
             if(_users.Any(u => u.Email == user.Value.Email))
                 return Result.Failure(new Error("Usuario.Duplicado","Ya existe un usuario con este email para este tenant"));
                 
@@ -210,12 +209,41 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
 
         public Result DeleteUser(Guid id)
         {
-            var user = _users.FirstOrDefault(u => Id == id);
+            var user = _users.FirstOrDefault(u => u.Id == id);
             if(user == null)
                 return Result.Failure(new Error("Usuario.NoEncontrado","El usuario no existe para este tenant"));
             
             user.Deactivate();
             return Result.Success();
+        }
+
+        //Tostring method
+
+        public override string ToString()
+        {
+            string result = @$"Nombre legal: {LegalName.ToString()}
+                               ID: {TaxID.ToString()}
+                               Nombre comercial: {TenantComercialName.ToString()}
+                               Direccion: {StreetName.ToString()} {AdressNumber.ToString()} {Complement.ToString()}
+                               Email: {TenantEmail.ToString()}
+                               Numero Telefonico: {TelephoneNumber.ToString()}
+                               Sector economico: {EconomicSector}
+                               Tipo ID {IDType}
+                               Ciudad: {City}
+                               Pais: {Country}
+                               Region: {RegionId}
+                               Activo: {IsActive}
+                               Creado: {CreatedAt}
+                               Modificado en: {UpdatedAt}";
+            if(this._users.Count > 0)
+                foreach (var user in _users)
+                {
+                    if(!user.IsActive)
+                        break;
+
+                    result += user.ToString();
+                }
+            return result;
         }
     }
 }

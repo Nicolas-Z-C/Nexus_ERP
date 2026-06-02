@@ -16,7 +16,7 @@ namespace Nexus.Domain.ValueObjects.Adresses
 
         public static Result<Street> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.AlphaNumericWhitSpaces());
+            var resultado = Validate(value,DomainValidators.AlphaNumericWhitSpaces(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;

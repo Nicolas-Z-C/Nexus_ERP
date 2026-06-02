@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using Nexus.Domain.Common.Result;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Enums;
@@ -107,6 +106,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(newStatus == ProyectStatus.Cancelled || newStatus == ProyectStatus.Finished)
                 return Result<Proyect>.Failure(new Error("Proyecto.Status","El proyecto no puede ser eliminado ni cancelado desde esta ventana"));
 
+            if(newStatus != ProyectStatus.Planning && !HasLeftPlanningStage )
+                return Result<Proyect>.Failure(new Error($"Proyecto.Estado","El proyecto no ha pasado por la etapa de planeacion"));
+
             if(newStatus == ProyectStatus.Planning && HasLeftPlanningStage )
                 return Result<Proyect>.Failure(new Error($"Proyecto.Estado","El estado actual es superior al propuesto"));    
 
@@ -169,6 +171,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
                 return Result<Proyect>.Failure(new Error("Proyecto.Valores","El presupuesto no puede esar vacio o ser igual a cero"));
 
             Budget = newBudget;
+            EstimatedProffit = ContractPrice-Budget;
             Update();
             return Result<Proyect>.Success(this);
         } 
@@ -192,10 +195,25 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public Result AddAssignements(
             string taskName,
             DateOnly deadLine,
-            Priority priority
+            Priority priority,
+            Guid StaffID
         )
         {
-            var result = Assignement.Create(taskName,deadLine,TenantId,Id,priority);
+
+            if(deadLine > DateOnly.FromDateTime(EstimatedDateOfRelease) && !IsDelayed)
+            {
+            
+                var resultWarn = Assignement.Create(taskName,deadLine,TenantId,Id,StaffID, priority);
+
+                if(resultWarn.IsFailure)
+                    return resultWarn.Error;
+                
+                _assignements.Add(resultWarn.Value);
+                Update();    
+                return Result.Warning(new Error("Proyecto.AgregarTareas","La tarea agregada es mayor al tiempo estimado de finalizacion"));
+    
+            }            
+            var result = Assignement.Create(taskName,deadLine,TenantId,Id,StaffID, priority);
 
             if(result.IsFailure)
                 return result.Error;
@@ -203,6 +221,34 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             _assignements.Add(result.Value);
             Update();
             return Result.Success();
+        }
+
+        public override string ToString()
+        {
+            string result = @$"Nombre proyecto: {ProyectName.ToString()}
+                               Presupuesto: {Budget.ToString()}
+                               Precio del contrato: {ContractPrice.ToString()}
+                               Ganancia estimada: {EstimatedProffit.ToString()}
+                               Duracion estimada(dias): {EstimatedDurationDays}
+                               Fecha de inicio: {DateOfStart}
+                               Fecha de finalizacion estimada: {EstimatedDateOfRelease}
+                               Fecha real de entrega: {RealDateOfRelease}
+                               Moneda: {Currency.ToString()}
+                               Esta atrasado?: {IsDelayed}
+                               Ya supero la fase de planeacion: {ProyectState}
+                               Estatus: {ProyectState.ToString()}
+                               Creado: {CreatedAt}
+                               Modificado en: {UpdatedAt}";
+
+            if(this._assignements.Count > 0)
+                foreach (var assignement in _assignements)
+                {
+                    if(assignement.TaskStatus == Task_status.Cancelled || assignement.TaskStatus == Task_status.Finished )
+                        break;
+                    result += " \n";
+                    result += assignement.ToString();
+                }
+            return result;
         }
     }
 }

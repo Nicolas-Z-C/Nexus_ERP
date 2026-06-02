@@ -16,7 +16,7 @@ namespace Nexus.Domain.ValueObjects.Names
 
         public static Result<Name> Create(string value)
         {
-            var resultado = Validate(value,DomainValidators.Upercase(),maxLenght);
+            var resultado = Validate(value,DomainValidators.AlphaNumericWhitSpaces(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;
