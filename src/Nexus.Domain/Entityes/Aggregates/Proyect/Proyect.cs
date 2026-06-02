@@ -199,6 +199,20 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             Guid StaffID
         )
         {
+
+            if(deadLine > DateOnly.FromDateTime(EstimatedDateOfRelease) && !IsDelayed)
+            {
+            
+                var resultWarn = Assignement.Create(taskName,deadLine,TenantId,Id,StaffID, priority);
+
+                if(resultWarn.IsFailure)
+                    return resultWarn.Error;
+                
+                _assignements.Add(resultWarn.Value);
+                Update();    
+                return Result.Warning(new Error("Proyecto.AgregarTareas","La tarea agregada es mayor al tiempo estimado de finalizacion"));
+    
+            }            
             var result = Assignement.Create(taskName,deadLine,TenantId,Id,StaffID, priority);
 
             if(result.IsFailure)

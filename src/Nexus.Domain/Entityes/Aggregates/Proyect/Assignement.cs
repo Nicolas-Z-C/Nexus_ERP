@@ -73,7 +73,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(TaskStatus == Task_status.Cancelled || TaskStatus == Task_status.Finished)
                 return Result<Assignement>.Failure(new Error("Tarea.Reprogramacion",$"No se puede repgrogramar una tarea ya terminada o cancelad, estado actual: {TaskStatus.ToString()}"));
 
-            if(DeadLine > newDeadline || newDeadline > DateOnly.FromDateTime(DateTime.Today))
+            if(DeadLine > newDeadline || newDeadline < DateOnly.FromDateTime(DateTime.Today))
                 return Result<Assignement>.Failure(new Error("Tarea.DeadLine","La nueva fecha limite no puede ser anterior a la antes estipulada ni anterior al dia de hoy"));
             
             DeadLine = newDeadline;
@@ -126,7 +126,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             string result = @$"Nombre de la tarea = {TaskName}
                                Fecha limite = {DeadLine}
                                Estado de la tarea = {TaskStatus}
-                               Prioridad = {Priority}
+                               Prioridad = {Priority},
+                               Usuario Asignado = {StaffAssigned}
                                ";
             return result;
         }

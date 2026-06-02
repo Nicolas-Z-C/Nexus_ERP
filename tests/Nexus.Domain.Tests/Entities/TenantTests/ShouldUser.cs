@@ -2,7 +2,7 @@ using Nexus.Domain.Entityes.Aggregates.Tenant;
 using Xunit.Abstractions;
 
 
-namespace Nexus.Domain.Tests
+namespace Nexus.Domain.Tests.Entities.TenantTests
 {
     public class ShouldUser
     {

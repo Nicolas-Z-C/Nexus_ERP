@@ -1,7 +1,7 @@
 using Nexus.Domain.Entityes.Aggregates.Proyect;
 using Xunit.Abstractions;
 
-namespace Nexus.Domain.Tests
+namespace Nexus.Domain.Tests.Entities.ProyectTests
 {
     public class ShouldProyect
     {
@@ -85,6 +85,83 @@ namespace Nexus.Domain.Tests
             ? string.Join(" ", result.Error)
             : "");
 
+            _output.WriteLine(proyect.Value.ToString());
+        }
+
+        [Fact]
+        public void FinishProyectShouldWork()
+        {
+
+            var proyect = Proyect.Create(
+                "proyecto1",
+                100000000,
+                50000000,
+                3,
+                DateTime.Now.AddDays(1),
+                Guid.NewGuid(),
+                Enums.Currency.EUR
+            );
+
+            _output.WriteLine(proyect.Value.ToString());
+
+            var result = proyect.Value.FinishProyect();
+
+            Assert.True(result.IsSuccess, result.IsFailure 
+            ? string.Join(" ", result.Error)
+            : "");
+            _output.WriteLine(proyect.Value.ToString());
+        }
+
+        [Fact]
+        public void CancelProyectShouldWork()
+        {
+
+            var proyect = Proyect.Create(
+                "proyecto1",
+                100000000,
+                50000000,
+                3,
+                DateTime.Now.AddDays(1),
+                Guid.NewGuid(),
+                Enums.Currency.EUR
+            );
+
+            _output.WriteLine(proyect.Value.ToString());
+
+            var result = proyect.Value.CancelProyect();
+
+            Assert.True(result.IsSuccess, result.IsFailure 
+            ? string.Join(" ", result.Error)
+            : "");
+            _output.WriteLine(proyect.Value.ToString());
+        }
+
+        [Fact]
+        public void AddAssignementToProyectShouldWork()
+        {
+
+            var proyect = Proyect.Create(
+                "proyecto1",
+                100000000,
+                50000000,
+                3,
+                DateTime.Now.AddDays(3),
+                Guid.NewGuid(),
+                Enums.Currency.EUR
+            );
+
+            _output.WriteLine(proyect.Value.ToString());
+
+            var result = proyect.Value.AddAssignements(
+                "Tarea1",
+                DateOnly.FromDateTime(proyect.Value.DateOfStart.AddDays(15)),
+                Enums.Priority.High,
+                Guid.NewGuid()
+            );
+
+            Assert.True(result.IsSuccess, result.IsFailure 
+            ? string.Join(" ", result.Error)
+            : "");
             _output.WriteLine(proyect.Value.ToString());
         }
     }
