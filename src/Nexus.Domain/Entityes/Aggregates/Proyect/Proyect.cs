@@ -192,10 +192,11 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public Result AddAssignements(
             string taskName,
             DateOnly deadLine,
-            Priority priority
+            Priority priority,
+            Guid StaffID
         )
         {
-            var result = Assignement.Create(taskName,deadLine,TenantId,Id,priority);
+            var result = Assignement.Create(taskName,deadLine,TenantId,Id,StaffID, priority);
 
             if(result.IsFailure)
                 return result.Error;

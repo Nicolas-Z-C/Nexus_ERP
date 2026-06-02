@@ -16,7 +16,6 @@ namespace Nexus.Domain.Common.Result
     private Result(IEnumerable<Error> errors) : base(false, errors) => _value = default;
 
     public T Value => IsSuccess ? _value! : throw new InvalidOperationException("Resultado fallido no tiene valor.");
-
     public static Result<T> Success(T value) => new(value);
     public static Result<T> NoChanges(T value) => new(value);
     public new static Result<T> Failure(Error error) => new(error);

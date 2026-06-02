@@ -45,7 +45,12 @@ namespace Nexus.Domain.ValueObjects.Common
             if(!regex.IsMatch(value))
                 return new Error("Propiedad.Formato","La Propiedad no cumple con el formato especificado");
             
-            return value;
+            return value; 
+        }
+
+        public override string ToString()
+        {
+            return Value;
         }
     }
 }

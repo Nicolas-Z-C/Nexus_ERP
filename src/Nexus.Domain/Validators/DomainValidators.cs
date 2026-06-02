@@ -12,28 +12,23 @@ namespace Nexus.Domain.Validators
     [GeneratedRegex(@"^\d+$")]
     public static partial Regex OnlyNumbers();
     
-    [GeneratedRegex(@"/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/")]
+    [GeneratedRegex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#_\-.])[A-Za-z\d@$!%*?&#_\-.]{10,}$")]
     public static partial Regex Password();
 
-    [GeneratedRegex(@"^[A-Z]$")]
-    public static partial Regex IataCode();
-
-    [GeneratedRegex(@"^[A-Z]$")]
+    [GeneratedRegex(@"^[A-Z]+$")]
     public static partial Regex Upercase();
 
-    [GeneratedRegex(@"^[a-zA-Z0-ZáéíóúÁÉÍÓÚñÑ]+$")]
+    [GeneratedRegex(@"^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$")]
     public static partial Regex AlphaNumeric();
 
-    [GeneratedRegex(@"^[a-zA-Z0-ZáéíóúÁÉÍÓÚñÑ ]+$")]
+    [GeneratedRegex(@"^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]+$")]
     public static partial Regex AlphaNumericWhitSpaces();
 
-    [GeneratedRegex(@"^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ]+$")]
-    public static partial Regex PostalCode();
     // --- Patrones de Contacto ---
-    [GeneratedRegex(@"^\+?\d{1,15}")]
+    [GeneratedRegex(@"^\+?\d{1,15}$")]
     public static partial Regex PhoneNumber();
 
-    [GeneratedRegex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+")]
+    [GeneratedRegex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")]
     public static partial Regex Email();
 
     // --- Patrones de Texto ---

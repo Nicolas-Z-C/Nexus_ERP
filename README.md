@@ -67,7 +67,7 @@ Nexus/
 - [ x ] Base project structure (Clean Architecture)
 - [ x ] Creation of initial catalog entities (Countries, Regions, Cities)
 - [ x ] Creation of **Tenant** and **User** entities
-- [ ] Creation of **Project** and **Staff** entities
+- [ x ] Creation of **Project** and **Staff** entities
 - [ ] Unit testing of the 3 main entities and their behavior with child entities
 - [ ] Staff Module (employee CRUD)
 - [ ] Inventory Module (product and stock CRUD)

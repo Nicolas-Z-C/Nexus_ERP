@@ -115,5 +115,12 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             IsActive = false;
             Update();
         }
+
+        public override string ToString()
+        {
+            string result = @$"Username = {UserName}
+                               UserID = {Id}";
+            return result;
+        }
     }
 }

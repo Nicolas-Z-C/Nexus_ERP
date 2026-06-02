@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "Nexus.Web.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-7yquxY13REoFrW6UMsGxsuGG7nXTn+HG8afriuAE6dE=",
+    "hash": "sha256-crTzd4kHbixPa+1O0XA42urxOoPSnenIEd4tJ9euT+w=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.87vtjjdetb.js"
@@ -58,6 +58,12 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       }
     ],
     "assembly": [
+      {
+        "virtualPath": "Ardalis.SmartEnum.wasm",
+        "name": "Ardalis.SmartEnum.ri39yuld3d.wasm",
+        "integrity": "sha256-7VuG0l6Qyr+o5efx3R0cB7rRD0s1hXnX1kv6N6VbnTY=",
+        "cache": "force-cache"
+      },
       {
         "virtualPath": "AutoMapper.wasm",
         "name": "AutoMapper.6ahu3i90g5.wasm",
@@ -1296,40 +1302,40 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "Nexus.Application.wasm",
-        "name": "Nexus.Application.4d3fw9c10q.wasm",
-        "integrity": "sha256-yKIZ76cAlW86AqAklZB6guz76X152I/wHGQmMURFIY4=",
+        "name": "Nexus.Application.8wbl4ik2l1.wasm",
+        "integrity": "sha256-ePtnhYVaOTYqqzCPgFJXobsfWLzKqdChbtO8wa00vp8=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Nexus.Domain.wasm",
-        "name": "Nexus.Domain.ngxpo3a1c1.wasm",
-        "integrity": "sha256-p1n+EDg1SeRcarZ4MmN7Nzk2lCGg1o8GlmD+qWFQ0VI=",
+        "name": "Nexus.Domain.f8joyq04ig.wasm",
+        "integrity": "sha256-oX73eKDaZ67nXad+g1sBIvrtipvTBtGR3PZQBJxlKSQ=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Nexus.Web.Client.wasm",
-        "name": "Nexus.Web.Client.xcf5igh3ki.wasm",
-        "integrity": "sha256-AT+SpreP7FRPoDRMxiAul/LKo+6Ip1P4LS5fuyOq1PI=",
+        "name": "Nexus.Web.Client.pk3ln4ncov.wasm",
+        "integrity": "sha256-WXyALfhdgmA40LT6NSfIk/Ko2Y10PURh/FgSPzlf+pA=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "Nexus.Application.pdb",
-        "name": "Nexus.Application.v4mmgel5o9.pdb",
-        "integrity": "sha256-cU7RQiuAyWq71gj6S5ZYE/X2osecOjNa4ANR+I/xiuk=",
+        "name": "Nexus.Application.yangi6mw0i.pdb",
+        "integrity": "sha256-BpyrIM9+gZrYueghzsrvwTfa687DSxrRkFjDNbr5/+E=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Nexus.Domain.pdb",
-        "name": "Nexus.Domain.l0c4evsjxj.pdb",
-        "integrity": "sha256-1T9FYHM+zkIcohxe/go2wjiqyREzEg0Zvwv348N64dE=",
+        "name": "Nexus.Domain.k9yxdce5lg.pdb",
+        "integrity": "sha256-SNebFkXmG/vywSoKx/U0lp/og7D1EFaxNbqYZh42bjo=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Nexus.Web.Client.pdb",
-        "name": "Nexus.Web.Client.rblm0g37yr.pdb",
-        "integrity": "sha256-d0XZQlzR2e0ftjwMIdhHIp9uBljZLmhLYYf5UbhzAXs=",
+        "name": "Nexus.Web.Client.urnxzpr72c.pdb",
+        "integrity": "sha256-mm2fsOvEbo8yHYRI/bxBJ+A7zRR1g3aQyunJ2LrKFKY=",
         "cache": "force-cache"
       }
     ],

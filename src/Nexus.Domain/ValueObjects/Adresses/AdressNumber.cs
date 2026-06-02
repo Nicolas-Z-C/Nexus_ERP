@@ -13,7 +13,7 @@ namespace Nexus.Domain.ValueObjects.Adresses
 
         public static Result<AdressNumber> Create(string value)
         {
-            var resultado = Validate(value,maxLenght,DomainValidators.AlphaNumeric());
+            var resultado = Validate(value,DomainValidators.AlphaNumeric(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;
