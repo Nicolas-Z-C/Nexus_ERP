@@ -203,9 +203,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
             return Result<Staff>.Success(this);
         }
 
-        public Result<Staff> ChangeStatus(
-            PersonalStatus newStatus
-        )
+        public Result<Staff> ChangeStatus(PersonalStatus newStatus)
         {
             var check = StatusCheck();
 
@@ -218,6 +216,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
             if(newStatus == PersonalStatus.Fired)
                 IsFired = true;
 
+            StaffStatus = newStatus;
             Update();
             return Result<Staff>.Success(this);
         }
@@ -241,6 +240,23 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
                 return Result<Staff>.Failure(new Error("Empleado.Despedido","No se puede realizar esta accion, el empleado se encuentra despedido"));
             
             return Result.Success();
+        }
+        public override string ToString()
+        {
+            string result = @$"Nombre legal: {LegalName.ToString()}
+                               StaffID: {StaffID.ToString()}
+                               Direccion: {StreetName.ToString()} {AdressNumber.ToString()} {Complement.ToString()}
+                               Email: {Email.ToString()}
+                               Numero Telefonico: {TelephoneNumber.ToString()}
+                               Puesto: {PositionID}
+                               Contrato: {ContractID}
+                               Ciudad: {CityID}
+                               Pais: {CountryID}
+                               Region: {RegionID}
+                               Estado: {StaffStatus}
+                               Creado: {CreatedAt}
+                               Modificado en: {UpdatedAt}";
+            return result;
         }
     }
 }

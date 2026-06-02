@@ -13,7 +13,7 @@ namespace Nexus.Domain.ValueObjects.IDs
 
         public static Result<PersonelID> Create(string value)
         {
-            var resultado = Validate(value,DomainValidators.Upercase(),maxLenght);
+            var resultado = Validate(value,DomainValidators.AlphaNumeric(),maxLenght);
 
             if(resultado.IsFailure)
                 return resultado.Error;
