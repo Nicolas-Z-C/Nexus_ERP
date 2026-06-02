@@ -1,6 +1,4 @@
 using Nexus.Domain.Entityes.Aggregates.Tenant;
-using Nexus.Domain.ValueObjects.Common;
-using Xunit;
 using Xunit.Abstractions;
 
 namespace Nexus.Domain.Tests

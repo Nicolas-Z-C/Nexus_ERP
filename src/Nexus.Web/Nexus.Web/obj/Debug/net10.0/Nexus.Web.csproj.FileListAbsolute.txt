@@ -1,5 +1,3 @@
-C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\EmbeddedAttribute.cs
-C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\ValidatableTypeAttribute.cs
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debug\net10.0\Nexus.Web.Client.runtimeconfig.json
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debug\net10.0\Nexus.Web.Client.staticwebassets.runtime.json
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debug\net10.0\Nexus.Web.Client.staticwebassets.endpoints.json
@@ -150,6 +148,8 @@ C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debu
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debug\net10.0\Nexus.Application.pdb
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debug\net10.0\Nexus.Infrastructure.pdb
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\bin\Debug\net10.0\Nexus.Domain.pdb
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\EmbeddedAttribute.cs
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\ValidatableTypeAttribute.cs
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\Nexus.Web.csproj.AssemblyReference.cache
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\rpswa.dswa.cache.json
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\Nexus.Web.GeneratedMSBuildEditorConfig.editorconfig
@@ -218,7 +218,6 @@ C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debu
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\Nexus.Web.csproj.Up2Date
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\Nexus.Web.dll
 C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web\obj\Debug\net10.0\refint\Nexus.Web.dll

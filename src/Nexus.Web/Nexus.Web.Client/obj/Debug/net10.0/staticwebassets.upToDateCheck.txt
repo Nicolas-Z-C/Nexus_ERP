@@ -1,6 +1,0 @@
-Layout\ReconnectModal.razor.js
-C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web.Client\Layout\ReconnectModal.razor.js
-C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web.Client\wwwroot\appsettings.json
-C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web.Client\wwwroot\appsettings.Development.json
-wwwroot\appsettings.Development.json
-wwwroot\appsettings.json

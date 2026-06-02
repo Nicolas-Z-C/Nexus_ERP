@@ -70,17 +70,21 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             return Result<string>.Success(code);
         }
 
-        public Result ResetPassword(string code, Password newPassword)
+        public Result ResetPassword(string code, string newPassword)
         {
             if(ResetToken == null)
                 return Result.Failure(new Error("Error.Validacion","No se ha solicitado un codigo de cambio de contraseña"));
             
             var validacion = ResetToken.ValidateCode(code, DateTime.UtcNow);
+            var passwd = Password.Create(newPassword);
 
             if(validacion.IsFailure)
                 return validacion.Error;
-            
-            UserPassword = newPassword;
+
+            if(passwd.IsFailure)
+                return passwd.Error;
+
+            UserPassword = passwd.Value;
             ResetToken = null;
             Update();
             return Result.Success();
@@ -115,7 +119,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             IsActive = false;
             Update();
         }
-
+        
         public override string ToString()
         {
             string result = @$"Username = {UserName}
