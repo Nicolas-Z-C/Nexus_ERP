@@ -68,7 +68,8 @@ Nexus/
 - [ x ] Creation of initial catalog entities (Countries, Regions, Cities)
 - [ x ] Creation of **Tenant** and **User** entities
 - [ x ] Creation of **Project** and **Staff** entities
-- [ ] Unit testing of the 3 main entities and their behavior with child entities
+- [ x ] Unit testing of the 3 main entities and their behavior with child entities
+- [ ] Make the infrastructure for the Db of every entity
 - [ ] Staff Module (employee CRUD)
 - [ ] Inventory Module (product and stock CRUD)
 
