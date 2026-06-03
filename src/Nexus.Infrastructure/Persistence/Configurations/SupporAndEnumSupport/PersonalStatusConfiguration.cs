@@ -9,7 +9,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<PersonalStatusEntity> builder)
         {
-            builder.ToTable("Personel state");
+            builder.ToTable("Personel_state");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName

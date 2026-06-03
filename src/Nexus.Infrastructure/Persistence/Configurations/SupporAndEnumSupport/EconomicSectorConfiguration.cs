@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Nexus.Domain.Entities.Catalog.Support;
+using Nexus.Domain.Entityes.EnumSupportEntities;
 
 namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
 {
@@ -8,7 +8,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<EconomicSectorEntity> builder)
         {
-            builder.ToTable("Economic Sector");
+            builder.ToTable("Economic_Sector");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName

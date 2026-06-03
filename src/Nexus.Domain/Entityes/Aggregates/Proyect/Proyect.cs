@@ -23,7 +23,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public bool HasLeftPlanningStage  {get; private set;} = false;
         //FKs - enums
 
-        public Currency Currency {get; private set;}
+        public int CurrencyID {get; private set;}
+        public Currency Currency => Currency.FromValue(CurrencyID);
         public int ProyectStateID {get; private set;} = (int)ProyectStatus.StandBy;
         public ProyectStatus ProyectState => (ProyectStatus)ProyectStateID;
         public Guid TenantId {get; set;}
@@ -47,7 +48,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             DateTime dateStart,
             DateTime dateReleaseEst,
             Guid tenantId,
-            Currency currency
+            int currency
         )
         {
             ProyectName = proyectName;
@@ -58,7 +59,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             DateOfStart = dateStart;
             EstimatedDateOfRelease = dateReleaseEst;
             TenantId = tenantId;
-            Currency = currency;
+            CurrencyID = currency;
         }
 
         //Own Methods
@@ -96,7 +97,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
                 dateStart,
                 dateStart.AddDays(estimatedDurationDays),
                 tenantId,
-                currency
+                currency.Value
             );
 
             return Result<Proyect>.Success(Proyect);            

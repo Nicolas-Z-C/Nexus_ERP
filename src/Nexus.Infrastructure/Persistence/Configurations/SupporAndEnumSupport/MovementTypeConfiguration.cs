@@ -8,7 +8,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<MovementType> builder)
         {
-            builder.ToTable("Task Status");
+            builder.ToTable("Movement_Type");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName

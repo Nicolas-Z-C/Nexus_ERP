@@ -8,12 +8,12 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<RemunerationType> builder)
         {
-            builder.ToTable("Proyect State");
+            builder.ToTable("Remuneration_Type");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName
             builder.Property(x => x.Name)
-            .HasColumnName("State")
+            .HasColumnName("Type")
             .HasMaxLength(100)
             .IsRequired();
             //Seeding

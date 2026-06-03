@@ -9,7 +9,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<ContractTypeEntity> builder)
         {
-            builder.ToTable("Contract Types");
+            builder.ToTable("Contract_Types");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName

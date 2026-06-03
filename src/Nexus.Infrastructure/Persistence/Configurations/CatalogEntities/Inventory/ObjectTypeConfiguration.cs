@@ -8,7 +8,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.CatalogEntities.Invent
     {
         public void Configure(EntityTypeBuilder<ObjectType> builder)
         {
-            builder.ToTable("Object type");
+            builder.ToTable("Object_type");
             //PK
             builder.HasKey(x => x.ID);
             //VO

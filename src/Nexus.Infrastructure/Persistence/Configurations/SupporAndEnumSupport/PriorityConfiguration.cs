@@ -8,12 +8,12 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<Priority> builder)
         {
-            builder.ToTable("Proyect State");
+            builder.ToTable("Priority");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName
             builder.Property(x => x.Name)
-            .HasColumnName("State")
+            .HasColumnName("Value")
             .HasMaxLength(100)
             .IsRequired();
             //Seeding

@@ -8,7 +8,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<ProyectStatusEntity> builder)
         {
-            builder.ToTable("Proyect State");
+            builder.ToTable("Proyect_State");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName

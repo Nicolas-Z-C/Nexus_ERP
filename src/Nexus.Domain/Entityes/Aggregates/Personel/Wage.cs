@@ -2,25 +2,30 @@ using Nexus.Domain.Common.Result;
 using Nexus.Domain.Enums;
 using Nexus.Domain.Errors;
 
-namespace Nexus.Domain.Entityes.Aggregates.Personal
+namespace Nexus.Domain.Entityes.Aggregates.Personel
 {
     public class Wage
     {
         public int ID {get; init;}
         public decimal Amount {get; private set;}
-        public Currency Currency {get; private set;}
+
+        public DateTime CreatedAt {get; init;} = DateTime.UtcNow;
+
+        public int CurrencyID {get; private set;}
+        public Currency Currency => Currency.FromValue(CurrencyID);
 
         //Enum
 
         public int RemunerationTypeID {get; private set;}
 
+
         //ef - constructor
 
-        private Wage(decimal amount, Currency currency, int remunerationType)
+        private Wage(decimal amount, int currency, int remunerationType)
         {
 
             Amount = amount;
-            Currency = currency;
+            CurrencyID = currency;
             RemunerationTypeID = remunerationType;
             ID = 0;
         }
@@ -33,7 +38,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
             if (amount <= 0)
                 return Result<Wage>.Failure(new Error("Wage.TheEmployerIsAPieceOfShit","The wage of the eployee cannot be 0 or lower"));
             
-            return Result<Wage>.Success(new(amount,currency,remunerationType));
+            var roundedAmount = Math.Round(amount, currency.Decimals);
+
+            return Result<Wage>.Success(new(roundedAmount,currency.Value,remunerationType));
             
         }
 

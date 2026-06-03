@@ -14,8 +14,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
 
         //Flags 
 
-        public bool? ReprogrammedFlag {get; private set;} = false;
-        public bool? OverdueFlag {get; private set;} = false;
+        public bool ReprogrammedFlag {get; private set;} = false;
+        public bool OverdueFlag {get; private set;} = false;
 
         //FK - enums
 

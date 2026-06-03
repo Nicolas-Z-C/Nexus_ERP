@@ -8,7 +8,7 @@ namespace Nexus.Infrastructure.Persistence.Configurations.SupporAndEnumSupport
     {
         public void Configure(EntityTypeBuilder<TaskStatusEntity> builder)
         {
-            builder.ToTable("Task Status");
+            builder.ToTable("Task_Status");
             //PK
             builder.HasKey(x => x.Id);
             //PropertyName

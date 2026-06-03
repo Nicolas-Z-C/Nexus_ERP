@@ -9,14 +9,14 @@ namespace Nexus.Infrastructure.Persistence.Configurations.CatalogEntities.ID
     {
         public void Configure(EntityTypeBuilder<IDType> builder)
         {
-            builder.ToTable("ID types");
+            builder.ToTable("ID_types");
             //PK
             builder.HasKey(x => x.ID);
             //VO
             builder.OwnsOne(x => x.Name, name =>
             {
                 name.Property(x => x.Value)
-                .HasColumnName("Name")
+                .HasColumnName("Type")
                 .HasMaxLength(100)
                 .IsRequired();
             });

@@ -1,4 +1,3 @@
-
 using Nexus.Domain.Common.Result;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Enums;
@@ -9,19 +8,23 @@ using Nexus.Domain.ValueObjects.Common;
 using Nexus.Domain.ValueObjects.IDs;
 using Nexus.Domain.ValueObjects.Names;
 
-namespace Nexus.Domain.Entityes.Aggregates.Personal
+namespace Nexus.Domain.Entityes.Aggregates.Personel
 {
     public class Staff : AuditableEntity, Itenant
     {
         public Name LegalName {get; private set;}
-        public PersonelID StaffID {get; private set;}
+
+        //Pin that is used to recrd work hours
+        public PersonelID StaffID {get; private set;} 
         public Street StreetName {get; private set;}
         public AdressNumber AdressNumber {get; private set;}
         public Name Complement {get; private set;}
         public Email Email {get; private set;}
         public TelephoneNumber TelephoneNumber {get; private set;}
         public DateTime DateOfJoining {get; init;} = DateTime.UtcNow;
-        public int WorkedHours {get; private set;} = 0;
+        public int WorkedHoursTotal {get; private set;} = 0;
+        public int WeeklyWorkdedHours {get; private set;} = 0;
+        public int MontlyWorkdedHours {get; private set;} = 0;
 
         //FK - enums
 
@@ -235,6 +238,28 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
             return Result<Staff>.Success(this);
         }
 
+        public Result AddWorkHours(int hours)
+        {
+            if(hours < 0)
+                return Result.Failure(new Error("Agregar.Horas","Las horas de trabajo no pueden ser menores a 0"));
+        
+            WeeklyWorkdedHours += hours;
+            MontlyWorkdedHours += hours;
+            WorkedHoursTotal += hours;
+            return Result.Success();
+        }
+
+        public void ResetWeeklyhours()
+        {
+            WeeklyWorkdedHours = 0;
+        }
+
+        public void ResetMontlyhours()
+        {
+            MontlyWorkdedHours = 0;
+        }
+
+
         private Result StatusCheck()
         {
             if(StaffStatus == PersonalStatus.Fired && IsFired == true)
@@ -242,6 +267,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
             
             return Result.Success();
         }
+
         public override string ToString()
         {
             string result = @$"Nombre legal: {LegalName.ToString()}
