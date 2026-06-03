@@ -26,7 +26,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
         //FK - enums
 
         public Guid TenantId {get; set;}
-        public PersonalStatus StaffStatus {get; private set;} = PersonalStatus.Active; 
+        public int StaffStatusID {get; private set;} = (int)PersonalStatus.Active;
+        public PersonalStatus StaffStatus => (PersonalStatus)StaffStatusID;
         public int PositionID {get; private set;}
         public int ContractID {get; private set;}
         public int CityID {get; private set;}
@@ -216,7 +217,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
             if(newStatus == PersonalStatus.Fired)
                 IsFired = true;
 
-            StaffStatus = newStatus;
+            StaffStatusID = (int)newStatus;
             Update();
             return Result<Staff>.Success(this);
         }
@@ -227,7 +228,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
                 return Result<Staff>.Failure(new Error("Empleado.Recontratacion","El empleado ya se encuentra empleado"));
             
             IsFired = false;
-            StaffStatus = PersonalStatus.Active;
+            StaffStatusID = (int)PersonalStatus.Active;
             IsReEmployed = true;
 
             Update();

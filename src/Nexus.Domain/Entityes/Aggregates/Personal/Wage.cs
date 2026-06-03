@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Nexus.Domain.Common.Result;
 using Nexus.Domain.Enums;
 using Nexus.Domain.Errors;
-using Nexus.Domain.ValueObjects.Names;
 
 namespace Nexus.Domain.Entityes.Aggregates.Personal
 {
@@ -17,22 +12,22 @@ namespace Nexus.Domain.Entityes.Aggregates.Personal
 
         //Enum
 
-        public RemunerationType RemunerationType {get; private set;}
+        public int RemunerationTypeID {get; private set;}
 
         //ef - constructor
 
-        private Wage(decimal amount, Currency currency, RemunerationType remunerationType)
+        private Wage(decimal amount, Currency currency, int remunerationType)
         {
 
             Amount = amount;
             Currency = currency;
-            RemunerationType = remunerationType;
+            RemunerationTypeID = remunerationType;
             ID = 0;
         }
 
         internal Wage() {}
 
-        public static Result<Wage> Create(decimal amount, Currency currency, RemunerationType remunerationType)
+        public static Result<Wage> Create(decimal amount, Currency currency, int remunerationType)
         {
    
             if (amount <= 0)

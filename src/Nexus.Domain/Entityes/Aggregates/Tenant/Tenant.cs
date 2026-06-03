@@ -23,7 +23,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
 
         //Foreing Keys - Enum Properties
 
-        public EconomicSector EconomicSector {get; private set;}
+
+        public int EconomicSectorID {get; private set;}
+        public EconomicSector EconomicSector => (EconomicSector)EconomicSectorID;
         public int IDType {get; private set;}
         public int City {get; private set;}
         public int Country {get; private set;}
@@ -45,7 +47,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             Name complement,
             Email tenantEmail,
             TelephoneNumber telephoneNumber,
-            EconomicSector economicSector,
+            int economicSector,
             int idType,
             int city,
             int country,
@@ -59,7 +61,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             Complement = complement;
             TenantEmail = tenantEmail;
             TelephoneNumber = telephoneNumber;
-            EconomicSector = economicSector;
+            EconomicSectorID = economicSector;
             IDType = idType;
             City = city;
             Country = country;
@@ -78,7 +80,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             string complement,
             string tenantEmail,
             string telephoneNumber,
-            EconomicSector economicSector,
+            int economicSector,
             int idType,
             int city,
             int country,
@@ -129,7 +131,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             string complement,
             string tenantEmail,
             string telephoneNumber,
-            EconomicSector economicSector,
+            int economicSector,
             int city,
             int region
             )
@@ -158,7 +160,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
                 complemen.Value       != Complement            ||
                 tenantemail.Value     != TenantEmail           ||
                 telephonenumber.Value != TelephoneNumber       ||
-                economicSector        != EconomicSector        ||
+                economicSector        != EconomicSectorID      ||
                 city                  != City                  ||
                 region                != RegionId;
 
@@ -172,7 +174,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             Complement = complemen.Value;
             TenantEmail = tenantemail.Value;
             TelephoneNumber = telephonenumber.Value;
-            EconomicSector = economicSector;
+            EconomicSectorID = economicSector;
             City = city;
 
             Update();

@@ -24,7 +24,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         //FKs - enums
 
         public Currency Currency {get; private set;}
-        public ProyectStatus ProyectState {get; private set;} = ProyectStatus.StandBy;
+        public int ProyectStateID {get; private set;} = (int)ProyectStatus.StandBy;
+        public ProyectStatus ProyectState => (ProyectStatus)ProyectStateID;
         public Guid TenantId {get; set;}
 
         //Child entities
@@ -115,7 +116,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(newStatus == ProyectStatus.Planning)
             {
                 HasLeftPlanningStage  = true;
-                ProyectState = newStatus;
+                ProyectStateID = (int)newStatus;
                 return Result<Proyect>.Success(this);
             }
 
@@ -126,7 +127,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(check.IsFailure)
                 return Result<Proyect>.Failure(check.Error);
             
-            ProyectState = newStatus;
+            ProyectStateID = (int)newStatus;
             Update();
             return Result<Proyect>.Success(this);
         } 
@@ -140,7 +141,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(_assignements.Any(a => a.TaskStatus == Task_status.Finished || a.TaskStatus == Task_status.Cancelled))
                 return Result<Proyect>.Failure(new Error("Proyecto.Finalizar","El proyecto aun tiene tareas pendientes, porfavor resuelva estas primero"));
 
-            ProyectState = ProyectStatus.Finished;
+            ProyectStateID = (int)ProyectStatus.Finished;
             RealDateOfRelease = DateTime.Now;
             Update();
             return Result<Proyect>.Success(this);
@@ -152,7 +153,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(check.IsFailure)
                 return Result<Proyect>.Failure(check.Error);
             
-            ProyectState = ProyectStatus.Cancelled;
+            ProyectStateID = (int)ProyectStatus.Cancelled;
             foreach (var assignement in _assignements)
             {
                 assignement.Cancel();
@@ -195,7 +196,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public Result AddAssignements(
             string taskName,
             DateOnly deadLine,
-            Priority priority,
+            int priority,
             Guid StaffID
         )
         {
