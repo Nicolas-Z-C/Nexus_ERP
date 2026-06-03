@@ -1,5 +1,4 @@
-// Domain/Entities/Catalog/Support/PersonalStatusEntity.cs
-namespace Nexus.Domain.Entities.Catalog.Support;
+namespace Nexus.Domain.Entityes.EnumSupportEntities;
 
 public class PersonalStatusEntity
 {

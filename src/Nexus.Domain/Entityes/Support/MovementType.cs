@@ -1,5 +1,4 @@
-// Domain/Entities/Catalog/Support/MovementTypeEntity.cs
-namespace Nexus.Domain.Entities.Catalog.Support;
+namespace Nexus.Domain.Entityes.Support;
 
 public class MovementType
 {

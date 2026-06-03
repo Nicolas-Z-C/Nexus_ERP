@@ -1,6 +1,5 @@
 using Ardalis.SmartEnum;
-using Nexus.Domain.ValueObjects.Common;
-using Nexus.Domain.ValueObjects.Names;
+
 namespace Nexus.Domain.Enums
 {
     public sealed class Currency : SmartEnum<Currency> 
@@ -21,5 +20,7 @@ namespace Nexus.Domain.Enums
         public string Code {get; private set;}
         public string FullName {get; private set;}
         public int Decimals {get; private set;}
+
+        public static IEnumerable<Currency> GetAll() => new[] {USD,EUR,CNY,COP};
     }
 }

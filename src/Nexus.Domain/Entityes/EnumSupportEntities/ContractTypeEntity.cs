@@ -1,6 +1,5 @@
-namespace Nexus.Domain.Entityes.EnumSupportEntities;
-
-public class ContractTypeEntity
+ namespace Nexus.Domain.Entityes.EnumSupportEntities;
+ public class ContractTypeEntity
 {
     public int Id { get; private set; }
     public string Name { get; private set; } = string.Empty;

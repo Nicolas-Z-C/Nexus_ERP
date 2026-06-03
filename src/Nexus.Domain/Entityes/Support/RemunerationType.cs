@@ -1,5 +1,4 @@
-namespace Nexus.Domain.Entityes.EnumSupportEntities;
-
+namespace Nexus.Domain.Entityes.Support;
 
 public class RemunerationType
 {

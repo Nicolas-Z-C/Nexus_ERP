@@ -1,4 +1,4 @@
-namespace Nexus.Domain.Entities.Catalog.Support;
+namespace Nexus.Domain.Entityes.EnumSupportEntities;
 
 public class EconomicSectorEntity
 {
