@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Nexus.Domain.Common.Result;
 using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Interfaces.Common;
 using Nexus.Domain.ValueObjects.Names;
 
-namespace Nexus.Domain.Entityes.Aggregates.Personal
+namespace Nexus.Domain.Entityes.Aggregates.Personel
 {
     public class Position : CatalogEntity, Itenant
     {

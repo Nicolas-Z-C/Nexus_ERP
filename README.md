@@ -69,7 +69,8 @@ Nexus/
 - [ x ] Creation of **Tenant** and **User** entities
 - [ x ] Creation of **Project** and **Staff** entities
 - [ x ] Unit testing of the 3 main entities and their behavior with child entities
-- [ ] Make the infrastructure for the Db of every entity
+- [ x ] Make the infrastructure for the Db of every entity (Dbconfig and Db Context)
+- [ ] Make the infrastructure for the Db of every entity (Repositories)
 - [ ] Staff Module (employee CRUD)
 - [ ] Inventory Module (product and stock CRUD)
 

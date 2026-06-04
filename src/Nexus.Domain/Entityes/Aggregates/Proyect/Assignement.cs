@@ -14,15 +14,17 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
 
         //Flags 
 
-        public bool? ReprogrammedFlag {get; private set;} = false;
-        public bool? OverdueFlag {get; private set;} = false;
+        public bool ReprogrammedFlag {get; private set;} = false;
+        public bool OverdueFlag {get; private set;} = false;
 
         //FK - enums
 
         public Guid TenantId {get; set;}
-        public Task_status TaskStatus {get; private set;} = Task_status.OnGoing;
+
+        public int TaskStatusID {get; private set;} 
+        public Task_status TaskStatus  => (Task_status)TaskStatusID;
         public Guid ProyectID {get; private set;}
-        public Priority Priority {get; private set;}
+        public int PriorityID {get; private set;}
         public Guid StaffAssigned {get; private set;}
 
         //Ef and private constructor
@@ -35,14 +37,14 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             Guid tenant,
             Guid proyect,
             Guid staff,
-            Priority priority
+            int priority
         )
         {
             TaskName = taskName;
             DeadLine = deadLine;
             TenantId = tenant;
             ProyectID = proyect;
-            Priority = priority;
+            PriorityID = priority;
             StaffAssigned = staff;
         }
 
@@ -54,7 +56,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             Guid tenant,
             Guid proyect,
             Guid staff,
-            Priority priority
+            int priority
         )
         {
             var name = Name.Create(taskName);
@@ -81,7 +83,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
 
             if(TaskStatus == Task_status.Overdue)
             {
-                TaskStatus = Task_status.OnGoing;
+                TaskStatusID = (int)Task_status.OnGoing;
                 OverdueFlag = false; 
             }
             
@@ -94,14 +96,14 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         */
         public Result<Assignement> Cancel()
         {
-            TaskStatus = Task_status.Cancelled;
+            TaskStatusID = (int)Task_status.Cancelled;
             Update();
             return Result<Assignement>.Success(this);
         }
 
         public Result<Assignement> Finish()
         {
-            TaskStatus = Task_status.Cancelled;
+            TaskStatusID = (int)Task_status.Finished;
             Update();
             return Result<Assignement>.Success(this);
         }
@@ -110,7 +112,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         {
             if(DateOnly.FromDateTime(DateTime.Now) > DeadLine)
             {
-                TaskStatus = Task_status.Overdue;
+                TaskStatusID = (int)Task_status.Overdue;
                 OverdueFlag = true;
                 Update();
                 return this;
@@ -126,7 +128,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             string result = @$"Nombre de la tarea = {TaskName}
                                Fecha limite = {DeadLine}
                                Estado de la tarea = {TaskStatus}
-                               Prioridad = {Priority},
+                               Prioridad = {PriorityID},
                                Usuario Asignado = {StaffAssigned}
                                ";
             return result;
