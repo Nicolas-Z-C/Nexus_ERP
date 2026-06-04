@@ -8,6 +8,7 @@ using Nexus.Domain.Entityes.CatalogEntityes.Geography;
 using Nexus.Domain.Entityes.CatalogEntityes.ID;
 using Nexus.Domain.Entityes.CatalogEntityes.Inventory;
 using Nexus.Domain.Entityes.CatalogEntityes.Personel;
+using Nexus.Domain.Entityes.Common;
 using Nexus.Domain.Entityes.EnumSupportEntities;
 using Nexus.Domain.Entityes.Support;
 
@@ -53,15 +54,23 @@ namespace Nexus.Infrastructure.Persistence
         //-Tenant
         public DbSet<Tenant> Tenants => Set<Tenant>();
         public DbSet<User> Users => Set<User>();
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
+            {
+                if(entry.State == EntityState.Modified)
+                    entry.Entity.Update();
+            }
+
+        return await base.SaveChangesAsync(cancellationToken);
+        }
     }
 }
 
-/*
-To-DO -> Hacer las entidades de soporte y soporte de los enums
-*/
