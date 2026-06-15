@@ -15,7 +15,7 @@ namespace Nexus.Domain.Entityes.Common
         }
 
         protected CatalogEntity() {}
-
+        /*
         public Result ChangeName(string name)
         {
             
@@ -28,5 +28,6 @@ namespace Nexus.Domain.Entityes.Common
             return Result.Success();
 
         }
+        */
     }
 }

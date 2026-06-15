@@ -204,6 +204,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Tenant
             
             if(_users.Any(u => u.Email == user.Value.Email))
                 return Result.Failure(new Error("Usuario.Duplicado","Ya existe un usuario con este email para este tenant"));
+            
+            if(_users.Any(u => u.UserName == user.Value.UserName))
+                return Result.Failure(new Error("Usuario.Duplicado","Ya existe un usuario con este email para este tenant"));
                 
             _users.Add(user.Value);
             return Result.Success();

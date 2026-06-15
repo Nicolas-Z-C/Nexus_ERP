@@ -23,6 +23,9 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Proyectconf
                 .HasColumnName("Name")
                 .HasMaxLength(50)
                 .IsRequired();
+
+                name.HasIndex(n => n.Value)
+                .IsUnique();
             });
 
             //Props

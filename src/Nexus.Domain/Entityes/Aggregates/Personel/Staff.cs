@@ -13,15 +13,13 @@ namespace Nexus.Domain.Entityes.Aggregates.Personel
     public class Staff : AuditableEntity, Itenant
     {
         public Name LegalName {get; private set;}
-
-        //Pin that is used to recrd work hours
         public PersonelID StaffID {get; private set;} 
         public Street StreetName {get; private set;}
         public AdressNumber AdressNumber {get; private set;}
         public Name Complement {get; private set;}
         public Email Email {get; private set;}
         public TelephoneNumber TelephoneNumber {get; private set;}
-        public DateTime DateOfJoining {get; init;} = DateTime.UtcNow;
+        public DateOnly DateOfJoining {get; init;} = DateOnly.FromDateTime(DateTime.UtcNow);
         public int WorkedHoursTotal {get; private set;} = 0;
         public int WeeklyWorkdedHours {get; private set;} = 0;
         public int MontlyWorkdedHours {get; private set;} = 0;

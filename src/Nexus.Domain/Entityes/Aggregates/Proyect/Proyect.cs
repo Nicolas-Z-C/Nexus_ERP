@@ -14,9 +14,9 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         public decimal ContractPrice {get; private set;}
         public decimal EstimatedProffit {get; private set;}
         public int EstimatedDurationDays {get; private set;}
-        public DateTime DateOfStart {get; private set;}
-        public DateTime EstimatedDateOfRelease {get; private set;}
-        public DateTime? RealDateOfRelease {get; private set;}
+        public DateOnly DateOfStart {get; private set;}
+        public DateOnly EstimatedDateOfRelease {get; private set;}
+        public DateOnly? RealDateOfRelease {get; private set;}
         public bool IsDelayed {get; private set;} = false;
 
         //This flag is made to ensure that a user cannot go back to a planning stage once it has steped out of it

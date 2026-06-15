@@ -35,6 +35,9 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Personel
                 .HasColumnName("staffid")
                 .HasMaxLength(20)
                 .IsRequired();
+
+                staffid.HasIndex( n => n.Value)
+                .IsUnique();
             });
             
             builder.OwnsOne(c => c.StreetName, street =>
@@ -67,6 +70,9 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Personel
                 .HasColumnName("Email")
                 .HasMaxLength(100)
                 .IsRequired();
+
+                email.HasIndex( n => n.Value)
+                .IsUnique();
             });
 
             builder.OwnsOne(c => c.TelephoneNumber, telephone =>
@@ -75,6 +81,9 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Personel
                 .HasColumnName("TelephoneNumber")
                 .HasMaxLength(18)
                 .IsRequired();
+                
+                telephone.HasIndex( n => n.Value)
+                .IsUnique();
             });
 
             //Props

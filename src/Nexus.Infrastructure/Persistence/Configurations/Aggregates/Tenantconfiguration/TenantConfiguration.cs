@@ -25,6 +25,8 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Tenantconfi
                 .HasColumnName("LegalName")
                 .HasMaxLength(100)
                 .IsRequired();
+                name.HasIndex(n => n.Value)
+                .IsUnique();
             });
 
             builder.OwnsOne(c => c.TaxID, taxID =>
@@ -33,6 +35,8 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Tenantconfi
                 .HasColumnName("TaxID")
                 .HasMaxLength(100)
                 .IsRequired();
+                taxID.HasIndex(n => n.Value)
+                .IsUnique();
             });
 
             builder.OwnsOne(c => c.TenantComercialName, comercialname =>
@@ -73,6 +77,8 @@ namespace Nexus.Infrastructure.Persistence.Configurations.Aggregates.Tenantconfi
                 .HasColumnName("TenantEmail")
                 .HasMaxLength(100)
                 .IsRequired();
+                email.HasIndex(n => n.Value)
+                .IsUnique();
             });
 
             builder.OwnsOne(c => c.TelephoneNumber, telephone =>
