@@ -4,7 +4,9 @@ services:
   sqlserver:
     restart: always
     ports: []  
-
+  redis:
+    restart: always
+  
   nexus_web:
     build:
       context: .
@@ -13,6 +15,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
+      - ConnectionStrings__Redis=${REDIS_CONNECTION}
     ports:
       - "${APP_PORT}:8080"
     depends_on:

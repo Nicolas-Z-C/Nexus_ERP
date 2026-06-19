@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "9YNuqDPXY6I=",
-  "success": true,
+  "dgSpecHash": "xLs+W4AENFk=",
+  "success": false,
   "projectFilePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\Nexus.Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ytraz\\.nuget\\packages\\ardalis.smartenum\\8.2.0\\ardalis.smartenum.8.2.0.nupkg.sha512"
-  ],
-  "logs": []
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1015",
+      "level": "Error",
+      "message": "The following PackageReference item(s) do not have a version specified: Ardalis.SmartEnum",
+      "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\Nexus.Domain.csproj",
+      "filePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\Nexus.Domain.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
