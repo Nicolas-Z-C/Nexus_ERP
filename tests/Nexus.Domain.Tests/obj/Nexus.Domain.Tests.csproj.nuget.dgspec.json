@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -53,8 +54,30 @@
           "dependencies": {
             "Ardalis.SmartEnum": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[8.2.0, )",
+              "versionCentrallyManaged": true
             }
+          },
+          "centralPackageVersions": {
+            "Ardalis.SmartEnum": "8.2.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "10.0.0",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
           },
           "imports": [
             "net461",
@@ -359,6 +382,7 @@
         "packagesPath": "C:\\Users\\ytraz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\tests\\Nexus.Domain.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -403,20 +427,45 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[18.5.1, )",
+              "versionCentrallyManaged": true
             },
             "coverlet.collector": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[6.0.4, )",
+              "versionCentrallyManaged": true
             },
             "xunit": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[2.9.2, )",
+              "versionCentrallyManaged": true
             },
             "xunit.runner.visualstudio": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[3.1.5, )",
+              "versionCentrallyManaged": true
             }
+          },
+          "centralPackageVersions": {
+            "Ardalis.SmartEnum": "8.2.0",
+            "coverlet.collector": "6.0.4",
+            "FluentAssertions": "8.9.0",
+            "FluentValidation.DependencyInjectionExtensions": "11.4.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
+            "MediatR": "14.1.0",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
+            "Microsoft.AspNetCore.Components.WebAssembly": "10.0.8",
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": "10.0.8",
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
+            "Microsoft.EntityFrameworkCore.Design": "10.0.8",
+            "Microsoft.EntityFrameworkCore.SqlServer": "10.0.8",
+            "Microsoft.EntityFrameworkCore.Tools": "10.0.8",
+            "Microsoft.Extensions.Caching.StackExchangeRedis": "10.0.0",
+            "Microsoft.NET.Test.Sdk": "18.5.1",
+            "Moq": "4.20.72",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.1.5"
           },
           "imports": [
             "net461",

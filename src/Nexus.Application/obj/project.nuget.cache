@@ -1,17 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "akS1BGVAhEk=",
-  "success": false,
+  "dgSpecHash": "s8OTf+5PqMA=",
+  "success": true,
   "projectFilePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1015",
-      "level": "Error",
-      "message": "The following PackageReference item(s) do not have a version specified: AutoMapper, FluentValidation.DependencyInjectionExtensions, MediatR",
-      "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj",
-      "filePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Application\\Nexus.Application.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "expectedPackageFiles": [
+    "C:\\Users\\ytraz\\.nuget\\packages\\ardalis.smartenum\\8.2.0\\ardalis.smartenum.8.2.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.4.0\\fluentvalidation.dependencyinjectionextensions.11.4.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mapster.dependencyinjection\\1.0.1\\mapster.dependencyinjection.1.0.1.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mediatr\\14.1.0\\mediatr.14.1.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.0\\microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.14.0\\microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.14.0\\microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.identitymodel.logging\\8.14.0\\microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.14.0\\microsoft.identitymodel.tokens.8.14.0.nupkg.sha512"
+  ],
+  "logs": []
 }
