@@ -1,0 +1,11 @@
+
+services:
+  sqlserver:
+    ports:
+      - "${DB_PORT}:1433"
+    environment:
+      SA_PASSWORD: ${DB_PASSWORD}
+      ACCEPT_EULA: "Y"
+  redis:
+    ports:
+      - "${REDIS_PORT}:6379"

@@ -1,0 +1,1 @@
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Web\Nexus.Web.Client\obj\Debug\net10.0\staticwebassets.build.json

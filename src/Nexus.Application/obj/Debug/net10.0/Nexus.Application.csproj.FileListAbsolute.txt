@@ -1,0 +1,16 @@
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\bin\Debug\net10.0\Nexus.Application.deps.json
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\bin\Debug\net10.0\Nexus.Application.dll
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\bin\Debug\net10.0\Nexus.Application.pdb
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\bin\Debug\net10.0\Nexus.Domain.dll
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\bin\Debug\net10.0\Nexus.Domain.pdb
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.csproj.AssemblyReference.cache
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.AssemblyInfoInputs.cache
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.AssemblyInfo.cs
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.csproj.CoreCompileInputs.cache
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.sourcelink.json
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Ap.EDFDCF09.Up2Date
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.dll
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\refint\Nexus.Application.dll
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\Nexus.Application.pdb
+C:\Users\ytraz\OneDrive\Desktop\Repos\Nexus_ERP\src\Nexus.Application\obj\Debug\net10.0\ref\Nexus.Application.dll
