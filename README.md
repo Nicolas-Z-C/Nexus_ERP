@@ -1,59 +1,59 @@
-﻿# Nexus ERP
+# Nexus ERP
 
-Multi-Tenant Enterprise Resource Planning (ERP) system designed under the principles of
-Clean Architecture and Domain-Driven Design (DDD).
-This project aims to centralize the operations of multiple companies in a single
-robust, scalable, and secure platform.
+Sistema de Gestión Empresarial (ERP) Multi-Tenant diseñado bajo principios de
+Arquitectura Limpia (Clean Architecture) y Desarrollo Orientado al Dominio (DDD).
+Este proyecto busca centralizar la operación de múltiples empresas en una única
+plataforma robusta, escalable y segura.
 
-## 🚧 Project Status
+## 🚧 Estado del proyecto
 
-Actively in development — **Phase 1: MVP**
+En desarrollo activo — **Fase 1: MVP**
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
+| Categoría | Tecnología |
 |---|---|
-| Language | C# (.NET 9) |
-| Architecture | Clean Architecture + DDD |
+| Lenguaje | C# (.NET 9) |
+| Arquitectura | Clean Architecture + DDD |
 | Frontend | Blazor Web App (Interactive Server/Auto) |
-| Persistence | Entity Framework Core + SQL Server |
-| Infrastructure | Docker & Docker Compose |
-| Version Control | Git + Gitflow |
+| Persistencia | Entity Framework Core + SQL Server |
+| Infraestructura | Docker & Docker Compose |
+| Control de versiones | Git + Gitflow |
 
-## 📋 Prerequisites
+## 📋 Requisitos previos
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download)
-- [SQL Server](https://www.microsoft.com/sql-server) or Docker to spin up the container
+- [SQL Server](https://www.microsoft.com/sql-server) o Docker para levantar el contenedor
 - [Docker & Docker Compose](https://www.docker.com/)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) or [JetBrains Rider](https://www.jetbrains.com/rider/)
-- [git-flow](https://github.com/nvie/gitflow) installed in Git
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) o [JetBrains Rider](https://www.jetbrains.com/rider/)
+- [git-flow](https://github.com/nvie/gitflow) instalado en Git
 
-## 🚀 Installation
+## 🚀 Instalación
 
-> The project is currently in the domain definition stage.
-> Full installation instructions will be available once the base structure is complete.
+> El proyecto se encuentra en la etapa de definición de dominio.
+> Las instrucciones de instalación completas estarán disponibles al finalizar la estructura base.
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/nexus-erp.git
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/nexus-erp.git
 cd nexus-erp
 
-# 2. Initialize git flow
+# 2. Inicializar git flow
 git flow init
 
-# 3. Switch to develop
+# 3. Cambiar a develop
 git checkout develop
-``` 
+```
 
-## 🏛️ Project Structure (Clean Architecture)
+## 🏛️ Estructura del proyecto (Clean Architecture)
 
 ```
 Nexus/
 ├── src/
-│   ├── Nexus.Domain/          # Entities, Value Objects, domain interfaces
-│   ├── Nexus.Application/     # Use cases, DTOs, application services
-│   ├── Nexus.Infrastructure/  # EF Core, repositories, external services
-│   └── Nexus.Web/             # Blazor Web App (presentation)
+│   ├── Nexus.Domain/          # Entidades, Value Objects, interfaces del dominio
+│   ├── Nexus.Application/     # Casos de uso, DTOs, servicios de aplicación
+│   ├── Nexus.Infrastructure/  # EF Core, repositorios, servicios externos
+│   └── Nexus.Web/             # Blazor Web App (presentación)
 ├── tests/
 │   ├── Nexus.Domain.Tests/
 │   └── Nexus.Application.Tests/
@@ -63,27 +63,22 @@ Nexus/
 
 ## 📌 Roadmap
 
-- [ x ] Database planning and normalization
-- [ x ] Base project structure (Clean Architecture)
-- [ x ] Creation of initial catalog entities (Countries, Regions, Cities)
-- [ x ] Creation of **Tenant** and **User** entities
-- [ x ] Creation of **Project** and **Staff** entities
-- [ x ] Unit testing of the 3 main entities and their behavior with child entities
-- [ x ] Make the infrastructure for the Db of every entity (Dbconfig and Db Context)
-- [ x ] Make the infrastructure for the Db of every entity (Repositories)
-- [ ] Make the Redis implementation for the cache
-- [ ] Make the Landing Page for the users
-- [ ] Staff Module (employee CRUD)
-- [ ] Inventory Module (product and stock CRUD)
+- [ ] Planificación y normalización de base de datos
+- [ ] Estructura base del proyecto (Clean Architecture)
+- [ ] Definición del dominio inicial
+- [ ] Creación de las entidades **Tenant** y **Usuario**
+- [ ] Creación de las entidades de catálogo (Países, Regiones, Ciudades)
+- [ ] Módulo de Personal (CRUD de empleados)
+- [ ] Módulo de Inventario (CRUD de productos y stock)
 
-## 🤝 Contributing
+## 🤝 Contribución
 
-This is a personal project. The workflow follows the **Gitflow** methodology:
+Este es un proyecto personal. El flujo de trabajo sigue la metodología **Gitflow**:
 
-- New features are developed in `feature/*` branches
-- Changes are merged into `develop` via Pull Requests
-- Stable versions are published to `main` via `release/*` branches
+- Las nuevas funcionalidades se desarrollan en ramas `feature/*`
+- Los cambios se integran a `develop` mediante Pull Requests
+- Las versiones estables se publican en `main` mediante ramas `release/*`
 
-## 📄 License
+## 📄 Licencia
 
-This project is licensed under the [MIT](LICENSE) license.
+Este proyecto está bajo la licencia [MIT](LICENSE).
