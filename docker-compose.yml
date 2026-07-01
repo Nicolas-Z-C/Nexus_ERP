@@ -18,9 +18,19 @@ services:
       interval: 10s
       retries: 5
       start_period: 20s
+  redis:
+    image: redis:alpine
+    container_name: nexus_redis
+    command: redis-server --maxmemory-policy allkeys-lru
+    networks:
+      - nexus_network
+    volumes:
+      - nexus_redisdata:/data
+
 
 volumes:
   nexus_sqldata:
+  nexus_redisdata:
 
 networks:
   nexus_network:

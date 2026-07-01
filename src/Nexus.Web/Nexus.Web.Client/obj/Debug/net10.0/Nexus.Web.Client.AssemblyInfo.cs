@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nexus.Web.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97f8ed5a472633fbccb89c1d3990cf334ee91e13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eff65e158d0e2df725bc8f882347e730c0002c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nexus.Web.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nexus.Web.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

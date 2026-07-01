@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fyE69ytkU50=",
+  "dgSpecHash": "LY/GVKuGJ2c=",
   "success": true,
   "projectFilePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Web\\Nexus.Web.Client\\Nexus.Web.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ytraz\\.nuget\\packages\\ardalis.smartenum\\8.2.0\\ardalis.smartenum.8.2.0.nupkg.sha512",
-    "C:\\Users\\ytraz\\.nuget\\packages\\automapper\\16.0.0\\automapper.16.0.0.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.4.0\\fluentvalidation.dependencyinjectionextensions.11.4.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
+    "C:\\Users\\ytraz\\.nuget\\packages\\mapster.dependencyinjection\\1.0.1\\mapster.dependencyinjection.1.0.1.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\mediatr\\14.1.0\\mediatr.14.1.0.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.2\\microsoft.aspnetcore.app.internal.assets.10.0.2.nupkg.sha512",
@@ -47,19 +49,5 @@
     "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\10.0.2\\microsoft.net.sdk.webassembly.pack.10.0.2.nupkg.sha512",
     "C:\\Users\\ytraz\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\10.0.2\\microsoft.netcore.app.runtime.mono.browser-wasm.10.0.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'AutoMapper' 16.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Web\\Nexus.Web.Client\\Nexus.Web.Client.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\ytraz\\OneDrive\\Desktop\\Repos\\Nexus_ERP\\src\\Nexus.Web\\Nexus.Web.Client\\Nexus.Web.Client.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0",
-        "net10.0/browser-wasm"
-      ]
-    }
-  ]
+  "logs": []
 }
