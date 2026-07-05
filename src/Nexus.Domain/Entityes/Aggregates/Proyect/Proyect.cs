@@ -45,8 +45,8 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             decimal contractPrice,
             decimal estimatedProffit,
             int estimatedDurationDays,
-            DateTime dateStart,
-            DateTime dateReleaseEst,
+            DateOnly dateStart,
+            DateOnly dateReleaseEst,
             Guid tenantId,
             int currency
         )
@@ -69,7 +69,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             decimal budget,
             decimal contractPrice,
             int estimatedDurationDays,
-            DateTime dateStart,
+            DateOnly dateStart,
             Guid tenantId,
             Currency currency
         )
@@ -85,7 +85,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
             if(contractPrice < 0)
                 return Result<Proyect>.Failure(new Error("Proyecto.Valores","El precio del contrato no puede ser menor a cero"));
             
-            if(dateStart < DateTime.Now)
+            if(dateStart < DateOnly.FromDateTime(DateTime.UtcNow))
                 return Result<Proyect>.Failure(new Error("Proyecto.Valores","La fecha de inicio del proyecto no puede se anterior a hoy"));
 
             var Proyect = new Proyect(
@@ -143,7 +143,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
                 return Result<Proyect>.Failure(new Error("Proyecto.Finalizar","El proyecto aun tiene tareas pendientes, porfavor resuelva estas primero"));
 
             ProyectStateID = (int)ProyectStatus.Finished;
-            RealDateOfRelease = DateTime.Now;
+            RealDateOfRelease = DateOnly.FromDateTime(DateTime.Now);
             Update();
             return Result<Proyect>.Success(this);
         }
@@ -188,7 +188,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
 
         public void IsDelayedCheck()
         {
-            if(EstimatedDateOfRelease < DateTime.Now)
+            if(EstimatedDateOfRelease < DateOnly.FromDateTime(DateTime.UtcNow))
                 IsDelayed = true;
         }
 
@@ -202,7 +202,7 @@ namespace Nexus.Domain.Entityes.Aggregates.Proyect
         )
         {
 
-            if(deadLine > DateOnly.FromDateTime(EstimatedDateOfRelease) && !IsDelayed)
+            if(deadLine > EstimatedDateOfRelease && !IsDelayed)
             {
             
                 var resultWarn = Assignement.Create(taskName,deadLine,TenantId,Id,StaffID, priority);
