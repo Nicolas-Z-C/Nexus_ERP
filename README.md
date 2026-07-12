@@ -71,7 +71,8 @@ Nexus/
 - [ x ] Unit testing of the 3 main entities and their behavior with child entities
 - [ x ] Make the infrastructure for the Db of every entity (Dbconfig and Db Context)
 - [ x ] Make the infrastructure for the Db of every entity (Repositories)
-- [ ] Make the Redis implementation for the cache
+- [ x ] Make the Redis implementation for the cache
+- [ x ] Make the MediatR implementation whit the PipeLine
 - [ ] Make the Landing Page for the users
 - [ ] Staff Module (employee CRUD)
 - [ ] Inventory Module (product and stock CRUD)

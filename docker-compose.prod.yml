@@ -1,26 +1,15 @@
-
 services:
-
-  sqlserver:
-    restart: always
-    ports: []  
-  redis:
-    restart: always
-  
-  nexus_web:
-    build:
-      context: .
-      dockerfile: src/Nexus.Web/Dockerfile
-    container_name: nexus_web
+  web:
+    ports:
+      - "${APP_PORT}:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=${CONNECTION_STRING}
       - ConnectionStrings__Redis=${REDIS_CONNECTION}
-    ports:
-      - "${APP_PORT}:8080"
-    depends_on:
-      sqlserver:
-        condition: service_healthy
-    networks:
-      - nexus_network
+    restart: always
+
+  sqlserver:
+    restart: always
+
+  redis:
     restart: always

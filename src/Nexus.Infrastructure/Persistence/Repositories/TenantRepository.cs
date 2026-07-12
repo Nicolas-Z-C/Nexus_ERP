@@ -25,7 +25,8 @@ namespace Nexus.Infrastructure.Persistence.Repositories
             return tenant;
         }
 
-        public async Task<Tenant?> GetByTenantEmail(string email, CancellationToken cancellationToken = default)
+
+        public async Task<Tenant?> GetByTenantEmailAsync(string email, CancellationToken cancellationToken = default)
         {
             var tenant = await _context.Tenants
                             .FirstOrDefaultAsync(x => x.TenantEmail.Value == email, cancellationToken);
