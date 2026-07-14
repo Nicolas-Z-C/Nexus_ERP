@@ -73,6 +73,7 @@ Nexus/
 - [ x ] Make the infrastructure for the Db of every entity (Repositories)
 - [ x ] Make the Redis implementation for the cache
 - [ x ] Make the MediatR implementation whit the PipeLine
+- [ x ] Make DTOs
 - [ ] Make the Landing Page for the users
 - [ ] Staff Module (employee CRUD)
 - [ ] Inventory Module (product and stock CRUD)
